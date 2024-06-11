@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
+import { RootState } from '../../redax/store';
 import CarList from '../../components/CarList/CarList';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './Favorites.module.css';

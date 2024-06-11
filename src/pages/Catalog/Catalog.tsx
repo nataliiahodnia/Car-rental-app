@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAdverts, selectAllAdverts } from '../../redax/slices/advertsSlice';
-import { RootState } from '../../redux/store';
+// import { RootState } from '../../redux/store';
 import CarList from '../../components/CarList/CarList';
 import SearchFilter from '../../components/SearchFilter/SearchFilter';
 import styles from './Catalog.module.css';

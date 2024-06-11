@@ -3,8 +3,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAdverts, selectAllAdverts } from '../../redax/slices/advertsSlice';
-import { Advert } from '../../redux/slices/advertsSlice';
-import { RootState } from '../../redux/store';
+// import { Advert } from '../../redux/slices/advertsSlice';
+// import { RootState } from '../../redux/store';
 import styles from './Home.module.css';
 import CarList from '../../components/CarList/CarList';
 

@@ -4,7 +4,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite, selectFavorites } from '../../redax/slices/favoritesSlice'
 import { Advert } from '../../redax/slices/advertsSlice';
-import { RootState } from '../../redux/store';
+// import { RootState } from '../../redux/store';
 import styles from './CarCard.module.css';
 
 interface Props {

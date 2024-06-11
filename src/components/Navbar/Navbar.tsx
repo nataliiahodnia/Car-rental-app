@@ -1,24 +1,39 @@
 // src/components/Navbar/Navbar.tsx
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <Link to="/">Car Rental Service</Link>
+        <NavLink to="/" className={styles.logoLink}>Car <span className={styles.logoBold}> Rental</span> Service</NavLink>
       </div>
       <ul className={styles.navLinks}>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/catalog">Catalog</Link>
+          <NavLink 
+            to="/catalog" 
+            className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}
+          >
+            Catalog
+          </NavLink>
         </li>
         <li>
-          <Link to="/favorites">Favorites</Link>
+          <NavLink 
+            to="/favorites" 
+            className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}
+          >
+            Favorites
+          </NavLink>
         </li>
       </ul>
     </nav>

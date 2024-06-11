@@ -38,7 +38,7 @@ const initialState: AdvertsState = {
 // Створимо асинхронний thunk для отримання оголошень
 export const fetchAdverts = createAsyncThunk('adverts/fetchAdverts', async () => {
   try {
-    const response = await fetch('https://mockapi.io/api/v1/adverts');
+    const response = await fetch('https://66684690f53957909ff74f2c.mockapi.io/api/v1/cars');
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }

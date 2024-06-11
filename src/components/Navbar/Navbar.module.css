@@ -1,0 +1,81 @@
+/* src/components/Navbar/Navbar.module.css */
+
+.navbar {
+     background-color: var(--blue-btn);
+     padding: 1rem;
+   }
+   
+/* src/components/Navbar/Navbar.module.css */
+
+.logoLink {
+     color: var(--white);
+     text-decoration: none;
+     font-size: 14px;
+     font-weight: 400;
+     transition: transform 0.3s ease-in-out;
+     display: inline-block;
+   }
+   
+   .logoBold {
+     font-weight: 600;
+     display: inline-block;
+     transition: transform 0.3s ease-in-out;
+   }
+   
+   .logoLink:hover .logoBold {
+     animation: moveLogo 1s infinite alternate;
+   }
+   
+   @keyframes moveLogo {
+     0% {
+       transform: translateY(0);
+     }
+     100% {
+       transform: translateY(-5px);
+     }
+   }
+   
+   
+   .navLinks {
+     list-style: none;
+     display: flex;
+     justify-content: center;
+     padding: 0;
+     gap: 32px;
+     margin-top: 28px;
+   }
+
+   .navLink {
+     padding: 4px 8px;
+     border-radius: 12px;
+     color: var(--blue-btn);
+     background-color: var(--white);
+     text-decoration: none;
+     transition: transform 0.3s ease-in-out, background-color 0.3s, color 0.3s;
+   }
+
+.navLink:hover,
+.navLink:focus {
+  transform: scale(2.1);
+  background-color: var(--blue-btn);
+  color: var(--white);
+}
+
+.navLinkActive {
+  background-color: var(--blue-btn);
+  color: var(--white);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.navLink:hover .navLinkActive {
+  animation: bounce 0.5s;
+}
+   

@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavorite, removeFavorite, selectFavorites } from '../../redux/slices/favoritesSlice'
+import { addFavoriteCar, removeFavoriteCar, selectAllFavoriteCars } from '../../redux/slices/favoritesSlice';
 import { Advert } from '../../redux/slices/advertsSlice';
-// import { RootState } from '../../redux/store';
+import { RootState } from '../../redux/store'; // Виправлений імпорт
 import styles from './CarCard.module.css';
 
 interface Props {
@@ -13,15 +13,16 @@ interface Props {
 
 const CarCard: React.FC<Props> = ({ advert }) => {
   const dispatch = useDispatch();
-  const favorites = useSelector(selectFavorites);
+  const favoriteCars = useSelector((state: RootState) => selectAllFavoriteCars(state)); // Використання RootState
 
-  const isFavorite = favorites.some((favorite) => favorite.id === advert.id);
+  const isFavorite = favoriteCars.some((favorite) => favorite.id === advert.id);
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
-      dispatch(removeFavorite(advert.id));
+      dispatch(removeFavoriteCar(advert.id));
     } else {
-      dispatch(addFavorite(advert));
+      const { id, make, model, year, img } = advert;
+      dispatch(addFavoriteCar({ id, make, model, year, img }));
     }
   };
 

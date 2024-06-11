@@ -1,7 +1,5 @@
-// src/redux/slices/advertsSlice.ts
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { RootState } from '../store'; // Змінено імпорт
 
 export interface Advert {
   id: number;
@@ -33,6 +31,7 @@ const initialState: AdvertsState = {
   status: 'idle',
   error: null,
 };
+
 
 // Видалено функції fetchAdvertsRequest, fetchAdvertsSuccess, fetchAdvertsFailure
 

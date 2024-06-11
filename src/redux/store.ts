@@ -1,0 +1,21 @@
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import advertsReducer, { fetchAdverts } from './slices/advertsSlice';
+import favoritesReducer from './slices/favoritesSlice';
+
+const store = configureStore({
+  reducer: {
+    adverts: advertsReducer,
+    favorites: favoritesReducer,
+  },
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+// Додамо AppThunk
+export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
+
+// Видаліть цей рядок, якщо не використовуєте fetchAdverts в іншому місці
+store.dispatch(fetchAdverts());
+
+export default store;

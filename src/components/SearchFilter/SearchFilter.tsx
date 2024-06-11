@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchAdverts } from '../../redax/slices/advertsSlice';
+import { fetchAdverts } from '../../redux/slices/advertsSlice';
 import styles from './SearchFilter.module.css';
 
 const SearchFilter: React.FC = () => {

@@ -27,9 +27,9 @@ const FeedbackForm: React.FC = () => {
   return (
     <div className={styles.feedbackFormContainer}>
       <form className={styles.feedbackForm} onSubmit={handleSubmit}>
-        <h2>Залишити відгук</h2>
+        <h2>Leave a feedback</h2>
         <div className={styles.formGroup}>
-          <label htmlFor="name">Ім'я</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
@@ -49,7 +49,7 @@ const FeedbackForm: React.FC = () => {
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="feedback">Відгук</label>
+          <label htmlFor="feedback">Feedback</label>
           <textarea
             id="feedback"
             value={feedback}
@@ -58,7 +58,7 @@ const FeedbackForm: React.FC = () => {
           ></textarea>
         </div>
         <button type="submit" className={styles.submitButton}>
-          Відправити
+          Send
         </button>
       </form>
     </div>

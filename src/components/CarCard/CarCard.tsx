@@ -12,6 +12,23 @@ import CarDetailsModal from "../CarDetailsModal/CarDetailsModal";
 import { IoIosHeart } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa6";
 
+// id: number;
+// year: number;
+// make: string;
+// model: string;
+// type: string;
+// img: string;
+// description: string;
+// fuelConsumption: number;
+// engineSize: string;
+// accessories: string[];
+// functionalities: string[];
+// rentalPrice: number;
+// rentalCompany: string;
+// address: string;
+// rentalConditions: string;
+// mileage: number;
+
 interface Props {
   advert: Advert;
 }
@@ -50,9 +67,11 @@ const CarCard: React.FC<Props> = ({ advert }) => {
         onClick={handleOpenModal}
       />
       <div className={styles.details}>
-        <h2>{`${advert.make} ${advert.model}`}</h2>
-        <p>Year: {advert.year}</p>
-        <p>Rental Price: ${advert.rentalPrice}/hour</p>
+        <h2 className={styles.titleCard}>{`${advert.make} ${advert.model} ${advert.rentalPrice}`}</h2>
+        <p className={styles.descriptionCard}>
+          {advert.year} &#10072; {advert.type} &#10072; {advert.rentalCompany}{" "}
+          &#10072; {advert.fuelConsumption}
+        </p>
         <button
           className={isFavorite ? styles.favorite : ""}
           onClick={handleFavoriteClick}

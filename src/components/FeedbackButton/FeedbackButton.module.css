@@ -51,15 +51,14 @@
     
     .modal {
       position: fixed;
-      top: 50%;
-      right: 20px; /* Розміщення модального вікна праворуч */
-      transform: translateY(-50%);
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
-      z-index: 1000;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
     }
     
     .overlay {

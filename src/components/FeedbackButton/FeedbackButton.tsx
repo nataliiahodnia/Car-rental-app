@@ -20,7 +20,7 @@ const FeedbackButton: React.FC = () => {
   return (
     <div className={styles.feedbackButtonContainer}>
       <button onClick={openModal} className={styles.feedbackButton}>
-        <BiCommentEdit  className={styles.icon} />
+        <BiCommentEdit className={styles.icon} />
         Feedback
       </button>
       <Modal

@@ -1,3 +1,5 @@
+// CarCard.tsx
+
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -7,9 +9,9 @@ import {
 } from "../../redux/slices/favoritesSlice";
 import { Advert } from "../../redux/slices/advertsSlice";
 import styles from "./CarCard.module.css";
-import CarDetailsModal from "../CarDetailsModal/CarDetailsModal";
 import { IoHeart } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
+import CarDetailsModal from "../CarDetailsModal/CarDetailsModal";
 
 interface Props {
   advert: Advert;
@@ -45,7 +47,7 @@ const CarCard: React.FC<Props> = ({ advert }) => {
         alt={`${advert.make} ${advert.model}`}
         onClick={handleOpenModal}
       />
-      <div>
+      <div className={styles.details}>
         <div className={styles.titleCar}>
           <h2 className={styles.titleCard}>{`${advert.make}, ${advert.year}`}</h2>
           <p className={styles.titlePrice}>{`${advert.rentalPrice}$`}</p>
@@ -61,14 +63,14 @@ const CarCard: React.FC<Props> = ({ advert }) => {
           {isFavorite ? <IoHeart /> : <IoMdHeartEmpty className={styles.notFavorite}/>}
         </button>
         <button className={styles.learnMore} onClick={handleOpenModal}>Learn more</button>
-        {isModalOpen && (
-          <CarDetailsModal
-            isOpen={isModalOpen}
-            onClose={handleCloseModal}
-            car={advert}
-          />
-        )}
       </div>
+      {isModalOpen && (
+        <CarDetailsModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          car={advert}
+        />
+      )}
     </div>
   );
 };

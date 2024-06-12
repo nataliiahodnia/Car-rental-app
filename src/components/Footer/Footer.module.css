@@ -1,0 +1,81 @@
+/* Footer.module.css */
+
+.footer {
+  background-color: rgba(46, 47, 66, 1);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Вирівнюємо внизу */
+  padding: 20px;
+  align-items: flex-start;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s ease; /* Анімація для плавного переходу */
+}
+
+.contactInfo,
+.additionalInfo {
+  text-align: left; /* Вирівнюємо контактну інформацію до лівого краю */
+}
+
+.contactInfo h3,
+.additionalInfo h3 {
+  display: none;
+}
+
+.contactInfo p,
+.additionalInfo p {
+  display: none;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 10px;
+}
+
+.iconLink {
+  text-decoration: none;
+  color: #fff;
+}
+
+.icon {
+  font-size: 24px;
+  transition: transform 0.3s ease; /* Анімація для ховера */
+}
+
+.icon:hover {
+  color: var(--wave-hover);
+  transform: scale(1.2); /* Збільшуємо іконку при наведенні курсора */
+}
+
+@media screen and (min-width: 768px) {
+
+  .footer {
+  position: fixed;
+    justify-content: space-around;
+
+  }
+
+  .socialIcons {
+    margin-top: 21px;
+  }
+
+  .contactInfo,
+  .additionalInfo {
+    text-align: left; /* Вирівнюємо контактну інформацію до лівого краю */
+  }
+
+  .contactInfo h3,
+  .additionalInfo h3 {
+    display: block; 
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .contactInfo p,
+  .additionalInfo p {
+    display: block; 
+    margin-bottom: 8px;
+  }
+}

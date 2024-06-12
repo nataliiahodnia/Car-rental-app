@@ -1,0 +1,36 @@
+.carousel {
+     display: flex;
+     overflow-x: auto;
+     scroll-snap-type: x mandatory;
+     gap: 30px;
+     padding: 20px;
+     background-color: var(--light-grey);
+     border-radius: 8px;
+     margin-top: 40px;
+   }
+   
+   .testimonial {
+     scroll-snap-align: start;
+     min-width: 300px;
+     padding: 20px;
+     background-color: var(--white);
+     border-radius: 8px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease-in-out;
+   }
+   
+   .testimonial:hover {
+     transform: scale(1.05);
+   }
+   
+   .text {
+     font-size: 16px;
+     color: var(--dark-blue);
+     margin-bottom: 10px;
+   }
+   
+   .author {
+     font-size: 14px;
+     color: var(--grey);
+   }
+   

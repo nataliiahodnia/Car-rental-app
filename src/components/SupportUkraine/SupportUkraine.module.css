@@ -1,0 +1,73 @@
+/* src/components/SupportUkraine/SupportUkraine.module.css */
+
+.supportSection {
+     background-color: var(--light-blue);
+     padding: 20px;
+     border-radius: 8px;
+     text-align: center;
+     margin: 20px 0;
+   }
+   
+   .title {
+     font-size: 24px;
+     font-weight: 700;
+     color: var(--dark-blue);
+     margin-bottom: 10px;
+   }
+   
+   .description {
+     font-size: 16px;
+     color: var(--dark-grey);
+     margin-bottom: 20px;
+   }
+   
+   .donationLink {
+     font-size: 18px;
+     font-weight: 400;
+     border: 1px solid var(--navy-blue);
+     color: var(--navy-blue);
+     text-decoration: none;
+     padding: 10px 20px;
+     border-radius: 15px;
+     transition: background-color 0.3s ease, color 0.3s ease;
+     animation: heartbeat 1.5s infinite;
+   }
+   
+   .donationLink:hover {
+     background-color: var(--blue-btn);
+     color: var(--white);
+   }
+   
+   @keyframes heartbeat {
+     0% {
+       transform: scale(1);
+     }
+     25% {
+       transform: scale(1.05);
+     }
+     50% {
+       transform: scale(0.95);
+     }
+     75% {
+       transform: scale(1.05);
+     }
+     100% {
+       transform: scale(1);
+     }
+   }
+   
+   .marquee {
+     margin-top: 20px;
+   }
+   
+   .marqueeContent {
+     display: flex;
+     gap: 20px;
+   }
+   
+   .marqueeItem {
+     font-size: 16px;
+     color: var(--dark-grey);
+     white-space: nowrap;
+   }
+   

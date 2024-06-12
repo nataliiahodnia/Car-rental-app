@@ -1,0 +1,67 @@
+import React from "react";
+import styles from "./TestimonialCarousel.module.css";
+
+const testimonials = [
+  {
+    id: 1,
+    text: "Високопрофесійний та ефективний сервіс. Я вражений якістю автомобілів і наданим сервісом.",
+    author: "Марія Коваль",
+  },
+  {
+    id: 2,
+    text: "Amazing service! The car was in great condition and the process was seamless.",
+    author: "John Doe",
+  },
+  {
+    id: 3,
+    text: "I highly recommend this rental service. The staff was friendly and helpful.",
+    author: "Jane Smith",
+  },
+  {
+    id: 4,
+    text: "Best rental experience ever! Will definitely use their service again.",
+    author: "Mark Wilson",
+  },
+
+  {
+    id: 5,
+    text: "Чудовий сервіс! Автомобіль був у відмінному стані, а процес був легким.",
+    author: "Іван Петров",
+  },
+  {
+    id: 6,
+    text: "Високо рекомендую цей прокат. Персонал був дуже дружелюбний і ввічливий.",
+    author: "Олена Коваленко",
+  },
+  {
+    id: 7,
+    text: "Найкращий прокат автомобілів! Обов'язково скористаюсь їхніми послугами ще раз.",
+    author: "Андрій Шевченко",
+  },
+  {
+    id: 8,
+    text: "Великий вибір автомобілів і відмінний сервіс. Я отримав чудовий досвід.",
+    author: "Ірина Михайлова",
+  },
+
+  {
+    id: 9,
+    text: "Smooth and easy process from start to finish. Will be using this service again for sure.",
+    author: "Michael Brown",
+  },
+];
+
+const TestimonialCarousel: React.FC = () => {
+  return (
+    <div className={styles.carousel}>
+      {testimonials.map((testimonial) => (
+        <div key={testimonial.id} className={styles.testimonial}>
+          <p className={styles.text}>"{testimonial.text}"</p>
+          <p className={styles.author}>- {testimonial.author}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default TestimonialCarousel;

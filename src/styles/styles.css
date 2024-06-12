@@ -5,3 +5,4 @@
 @import "./common.css";
 @import "./fonts.css";
 @import "./colors.css";
+@import "leaflet/dist/leaflet.css";

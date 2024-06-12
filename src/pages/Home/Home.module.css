@@ -1,0 +1,12 @@
+.homePage {
+     text-align: center;
+   }
+   
+   .titleHome {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 100;
+    columns: var(--navy-blue);
+   }
+   
+   

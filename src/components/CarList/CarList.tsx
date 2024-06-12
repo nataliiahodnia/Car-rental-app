@@ -13,7 +13,7 @@ const CarList: React.FC<Props> = ({ adverts }) => {
   return (
     <div className={styles.carList}>
       {adverts.map((advert) => (
-        <CarCard key={advert.id} advert={advert} />
+        <CarCard key={advert.id} advert={advert} /> // Виправлено атрибут `advert`
       ))}
     </div>
   );

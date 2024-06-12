@@ -22,9 +22,11 @@ const CarList: React.FC<Props> = ({ adverts }) => {
         <CarCard key={advert.id} advert={advert} />
       ))}
       {adverts.length > visibleAdvertCount && (
-        <button className={styles.loadMoreButton} onClick={loadMore}>
-          Load more
-        </button>
+        <div className={styles.loadMoreButtonContainer}>
+          <button className={styles.loadMoreButton} onClick={loadMore}>
+            Load more
+          </button>
+        </div>
       )}
     </div>
   );

@@ -16,12 +16,17 @@ const CarDetailsModal: React.FC<Props> = ({ isOpen, onClose, car }) => {
   const functionalities = car.functionalities ? car.functionalities.join(', ') : '';
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={onClose} className={styles.modal}>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      className={styles.modal}
+      overlayClassName={styles.overlay}
+    >
       <div className={styles.modalContent}>
         <button className={styles.closeButton} onClick={onClose}>
           &times;
         </button>
-        <img src={car.img} alt={`${car.make} ${car.model}`} />
+        <img className={styles.carImg} src={car.img} alt={`${car.make} ${car.model}`} />
         <div className={styles.details}>
           <h2>{`${car.make} ${car.model}`}</h2>
           <p>Year: {car.year}</p>
@@ -35,6 +40,11 @@ const CarDetailsModal: React.FC<Props> = ({ isOpen, onClose, car }) => {
           <p>Address: {car.address}</p>
           <p>Rental Conditions: {car.rentalConditions}</p>
           <p>Mileage: {car.mileage}</p>
+          <p>
+            <a href="tel:+380730000000" className={styles.rentalLink}>
+              Rental car - Call Now: +380730000000
+            </a>
+          </p>
         </div>
       </div>
     </Modal>

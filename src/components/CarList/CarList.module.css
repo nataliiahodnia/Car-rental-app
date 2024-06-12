@@ -1,5 +1,3 @@
-/* src/components/CarList/CarList.module.css */
-
 .carList {
   display: flex;
   flex-wrap: wrap;
@@ -8,13 +6,17 @@
   padding: 32px;
 }
 
-.loadMoreButton {
+.loadMoreButtonContainer {
+  width: 100%;
   display: flex;
-  margin-top: 30px;
+  justify-content: center;
+  margin-top: 20px; /* Зменшив значення, щоб було менше відстані між машинами і кнопкою */
+}
+
+.loadMoreButton {
   padding: 10px 20px;
   font-size: 14px;
   color: var(--blue-btn);
-  /* text-decoration: none; */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

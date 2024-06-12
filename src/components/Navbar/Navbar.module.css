@@ -1,7 +1,7 @@
 /* src/components/Navbar/Navbar.module.css */
 
 .navbar {
-     background-color: var(--blue-btn);
+     background-color: var(--navy-blue);
      padding: 1rem;
    }
    

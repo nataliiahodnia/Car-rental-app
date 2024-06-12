@@ -5,11 +5,16 @@ import styles from './CarDetailsModal.module.css';
 
 interface Props {
   isOpen: boolean;
-  onClose: () => void; // Додано властивість onClose
+  onClose: () => void;
   car: Advert;
 }
 
 const CarDetailsModal: React.FC<Props> = ({ isOpen, onClose, car }) => {
+  Modal.setAppElement('#root');
+
+  const accessories = car.accessories ? car.accessories.join(', ') : '';
+  const functionalities = car.functionalities ? car.functionalities.join(', ') : '';
+
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} className={styles.modal}>
       <div className={styles.modalContent}>
@@ -24,8 +29,8 @@ const CarDetailsModal: React.FC<Props> = ({ isOpen, onClose, car }) => {
           <p>Description: {car.description}</p>
           <p>Fuel Consumption: {car.fuelConsumption}L/100km</p>
           <p>Engine Size: {car.engineSize}</p>
-          <p>Accessories: {car.accessories.join(', ')}</p>
-          <p>Functionalities: {car.functionalities.join(', ')}</p>
+          <p>Accessories: {accessories}</p>
+          <p>Functionalities: {functionalities}</p>
           <p>Rental Company: {car.rentalCompany}</p>
           <p>Address: {car.address}</p>
           <p>Rental Conditions: {car.rentalConditions}</p>

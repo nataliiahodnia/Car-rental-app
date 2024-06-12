@@ -1,62 +1,49 @@
-/* CarCard.module.css */
+/* src/components/CarCard/CarCard.module.css */
 
-.card {
-     display: flex;
-     align-items: center;
-     border: 1px solid #ccc;
-     border-radius: 8px;
-     overflow: hidden;
-     margin-bottom: 20px;
-     transition: box-shadow 0.3s ease-in-out;
-   }
-   
-   .card:hover {
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   }
-   
-   .image {
-     width: 150px;
-     height: auto;
-     object-fit: cover;
-   }
-   
-   .details {
-     padding: 16px;
-   }
-   
-   .details h3 {
-     margin-top: 0;
-     margin-bottom: 8px;
-     font-size: 18px;
-   }
-   
-   .details p {
-     margin: 0;
-     font-size: 14px;
-     color: #555;
-   }
-   
-   button {
-     display: block;
-     margin-top: 8px;
-     padding: 8px 16px;
-     border: none;
-     border-radius: 4px;
-     background-color: #007bff;
-     color: #fff;
-     cursor: pointer;
-     transition: background-color 0.3s ease-in-out;
-   }
-   
-   button:hover {
-     background-color: #0056b3;
-   }
-   
-   .favorite {
-     background-color: #dc3545;
-   }
-   
-   .favorite:hover {
-     background-color: #bd2130;
-   }
-   
+.carCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px; /* Додаємо фіксовану ширину для карточки */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9; /* Змінюємо колір фону */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carCard img {
+  width: 274px;
+  height: 268px;
+  gap: 0px;
+  border-radius: 14px;
+  object-fit: cover; /* Забезпечуємо, що зображення буде відображатися без зісковзування */
+  margin-bottom: 10px; /* Додаємо зазор під зображенням */
+}
+
+.details {
+  width: 100%; /* Робимо деталі всю ширину карточки */
+}
+
+h2, p {
+  margin: 5px 0; /* Задаємо зовнішній відступ для текстових елементів */
+}
+
+button {
+  background-color: transparent; /* Фон кнопки прозорий */
+  border: none; /* Відсутність границі */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.iconHeart {
+  width: 18px;
+  height: 18px;
+  fill: #ff0000; /* Колір сердечка */
+  margin-right: 5px; /* Зазор між іконкою і текстом */
+}
+
+.favorite {
+  color: #ff0000; /* Колір тексту для улюбленої машини */
+}

@@ -6,6 +6,8 @@ import styles from './Home.module.css';
 import SupportUkraine from '../../components/SupportUkraine/SupportUkraine';
 import TestimonialCarousel from '../../components/TestimonialCarousel/TestimonialCarousel';
 import Footer from '../../components/Footer/Footer';
+import PromotionsSection from '../../components/PromotionsSection/PromotionsSection';
+
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -16,8 +18,9 @@ const HomePage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.titleHome}>Welcome to Car Rental Service</h1>
       <SupportUkraine />
+      <h1 className={styles.titleHome}>Welcome to Car Rental Service</h1>
+      <PromotionsSection />
       <TestimonialCarousel /> 
       <Footer />
     </div>

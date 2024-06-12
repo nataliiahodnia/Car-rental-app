@@ -1,7 +1,7 @@
 // src/redux/slices/favoritesSlice.ts
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../store'; // Змінено імпорт
+import { RootState } from '../store';
 
 interface FavoriteCar {
   id: number;
@@ -16,7 +16,7 @@ interface FavoritesState {
 }
 
 const initialState: FavoritesState = {
-  favoriteCars: [],
+  favoriteCars: JSON.parse(localStorage.getItem('favoriteCars') || '[]'),
 };
 
 const favoritesSlice = createSlice({
@@ -25,9 +25,11 @@ const favoritesSlice = createSlice({
   reducers: {
     addFavoriteCar(state, action: PayloadAction<FavoriteCar>) {
       state.favoriteCars.push(action.payload);
+      localStorage.setItem('favoriteCars', JSON.stringify(state.favoriteCars));
     },
     removeFavoriteCar(state, action: PayloadAction<number>) {
       state.favoriteCars = state.favoriteCars.filter((car) => car.id !== action.payload);
+      localStorage.setItem('favoriteCars', JSON.stringify(state.favoriteCars));
     },
   },
 });

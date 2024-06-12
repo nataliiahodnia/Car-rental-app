@@ -1,81 +1,65 @@
-/* src/components/Navbar/Navbar.module.css */
-
 .navbar {
-     background-color: var(--navy-blue);
-     padding: 1rem;
-   }
-   
-/* src/components/Navbar/Navbar.module.css */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--navy-blue);
+  padding: 20px 32px;
+}
 
-.logoLink {
-     color: var(--white);
-     text-decoration: none;
-     font-size: 14px;
-     font-weight: 400;
-     transition: transform 0.3s ease-in-out;
-     display: inline-block;
-   }
-   
-   .logoBold {
-     font-weight: 600;
-     display: inline-block;
-     transition: transform 0.3s ease-in-out;
-   }
-   
-   .logoLink:hover .logoBold {
-     animation: moveLogo 1s infinite alternate;
-   }
-   
-   @keyframes moveLogo {
-     0% {
-       transform: translateY(0);
-     }
-     100% {
-       transform: translateY(-5px);
-     }
-   }
-   
-   
-   .navLinks {
-     list-style: none;
-     display: flex;
-     justify-content: center;
-     padding: 0;
-     gap: 32px;
-     margin-top: 28px;
-   }
+.navLinks {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
 
-   .navLink {
-     padding: 4px 8px;
-     border-radius: 12px;
-     color: var(--blue-btn);
-     background-color: var(--white);
-     text-decoration: none;
-     transition: transform 0.3s ease-in-out, background-color 0.3s, color 0.3s;
-   }
-
-.navLink:hover,
-.navLink:focus {
-  transform: scale(2.1);
-  background-color: var(--blue-btn);
+.navLink {
+  text-decoration: none;
+  font-weight: 600;
   color: var(--white);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navLink:not(:first-child) {
+  margin-left: 20px;
+}
+
+.navLink:hover {
+  color: var(--blue-btn);
 }
 
 .navLinkActive {
-  background-color: var(--blue-btn);
-  color: var(--white);
+  color: var(--blue-btn);
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+.logo {
+  display: none;
 }
 
-.navLink:hover .navLinkActive {
-  animation: bounce 0.5s;
+@media screen and (min-width: 768px) {
+  .logo {
+    display: block;
+    font-size: 18px;
+    color: var(--white);
+  }
+
+  .logoLink {
+    text-decoration: none;
+    color: var(--white);
+    transition: color 0.3s ease;
+  }
+
+  .logoLink:hover {
+    color: var(--blue-btn);
+  }
+
+  .logoBold {
+    font-weight: 800;
+    color: var(--yellow);
+  }
+
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+  }
 }
-   

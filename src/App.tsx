@@ -1,15 +1,13 @@
-// src/App.tsx
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-import { Provider } from 'react-redux';
-import store from './redux/store';
-import Navbar from './components/Navbar/Navbar';
-import HomePage from './pages/Home/Home';
-import CatalogPage from './pages/Catalog/Catalog';
-import FavoritesPage from './pages/Favorites/Favorites';
-import './styles/styles.css';
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import Navbar from "./components/Navbar/Navbar";
+import HomePage from "./pages/Home/Home";
+import CatalogPage from "./pages/Catalog/Catalog";
+import FavoritesPage from "./pages/Favorites/Favorites";
+import "./styles/styles.css";
 
 const App: React.FC = () => {
   return (
@@ -27,4 +25,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-

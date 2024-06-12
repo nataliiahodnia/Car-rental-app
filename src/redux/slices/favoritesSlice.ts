@@ -5,14 +5,25 @@ import { RootState } from '../store';
 
 interface FavoriteCar {
   id: number;
+  year: number;
   make: string;
   model: string;
-  year: number;
+  type: string;
   img: string;
+  description: string;
+  fuelConsumption: number;
+  engineSize: string;
+  accessories: string[];
+  functionalities: string[];
+  rentalPrice: number;
+  rentalCompany: string;
+  address: string;
+  rentalConditions: string;
+  mileage: number;
 }
 
 interface FavoritesState {
-  favoriteCars: FavoriteCar[];
+  favoriteCars: FavoriteCar[]; 
 }
 
 const initialState: FavoritesState = {

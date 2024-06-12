@@ -5,32 +5,19 @@
      flex-wrap: wrap;
      gap: 20px;
      justify-content: center;
-     padding: 20px;
+     padding: 32px;
    }
    
-   .carList > div {
+   .carList {
      flex: 1 1 calc(25% - 40px); /* Four columns with 20px gap */
-     max-width: calc(25% - 40px);
+     /* max-width: calc(25% - 40px); */
      min-width: 200px; /* Adjust as needed to ensure a good fit */
      box-sizing: border-box;
    }
    
-   @media (max-width: 1200px) {
-     .carList > div {
-       flex: 1 1 calc(33.33% - 40px); /* Three columns with 20px gap */
-       max-width: calc(33.33% - 40px);
-     }
-   }
-   
-   @media (max-width: 992px) {
-     .carList > div {
-       flex: 1 1 calc(50% - 40px); /* Two columns with 20px gap */
-       max-width: calc(50% - 40px);
-     }
-   }
    
    @media (max-width: 768px) {
-     .carList > div {
+     .carList  {
        flex: 1 1 100%; /* One column */
        max-width: 100%;
      }

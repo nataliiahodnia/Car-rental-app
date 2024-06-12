@@ -6,28 +6,10 @@ import {
   selectAllFavoriteCars,
 } from "../../redux/slices/favoritesSlice";
 import { Advert } from "../../redux/slices/advertsSlice";
-import { RootState } from "../../redux/store";
 import styles from "./CarCard.module.css";
 import CarDetailsModal from "../CarDetailsModal/CarDetailsModal";
-import { IoIosHeart } from "react-icons/io";
-import { FaRegHeart } from "react-icons/fa6";
-
-// id: number;
-// year: number;
-// make: string;
-// model: string;
-// type: string;
-// img: string;
-// description: string;
-// fuelConsumption: number;
-// engineSize: string;
-// accessories: string[];
-// functionalities: string[];
-// rentalPrice: number;
-// rentalCompany: string;
-// address: string;
-// rentalConditions: string;
-// mileage: number;
+import { IoHeart } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
 
 interface Props {
   advert: Advert;
@@ -35,9 +17,7 @@ interface Props {
 
 const CarCard: React.FC<Props> = ({ advert }) => {
   const dispatch = useDispatch();
-  const favoriteCars = useSelector((state: RootState) =>
-    selectAllFavoriteCars(state)
-  );
+  const favoriteCars = useSelector(selectAllFavoriteCars);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const isFavorite = favoriteCars.some((favorite) => favorite.id === advert.id);
@@ -46,8 +26,7 @@ const CarCard: React.FC<Props> = ({ advert }) => {
     if (isFavorite) {
       dispatch(removeFavoriteCar(advert.id));
     } else {
-      const { id, make, model, year, img } = advert;
-      dispatch(addFavoriteCar({ id, make, model, year, img }));
+      dispatch(addFavoriteCar(advert));
     }
   };
 
@@ -66,18 +45,22 @@ const CarCard: React.FC<Props> = ({ advert }) => {
         alt={`${advert.make} ${advert.model}`}
         onClick={handleOpenModal}
       />
-      <div className={styles.details}>
-        <h2 className={styles.titleCard}>{`${advert.make} ${advert.model} ${advert.rentalPrice}`}</h2>
+      <div>
+        <div className={styles.titleCar}>
+          <h2 className={styles.titleCard}>{`${advert.make}, ${advert.year}`}</h2>
+          <p className={styles.titlePrice}>{`${advert.rentalPrice}$`}</p>
+        </div>
         <p className={styles.descriptionCard}>
-          {advert.year} &#10072; {advert.type} &#10072; {advert.rentalCompany}{" "}
-          &#10072; {advert.fuelConsumption}
+          {advert.model} &#10072; {advert.type} &#10072; {advert.rentalCompany} &#10072;{" "}
+          {advert.fuelConsumption}
         </p>
         <button
           className={isFavorite ? styles.favorite : ""}
           onClick={handleFavoriteClick}
         >
-          {isFavorite ? <IoIosHeart /> : <FaRegHeart />}
+          {isFavorite ? <IoHeart /> : <IoMdHeartEmpty className={styles.notFavorite}/>}
         </button>
+        <button className={styles.learnMore} onClick={handleOpenModal}>Learn more</button>
         {isModalOpen && (
           <CarDetailsModal
             isOpen={isModalOpen}

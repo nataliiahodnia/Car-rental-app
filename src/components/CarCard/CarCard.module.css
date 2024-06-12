@@ -5,22 +5,15 @@
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
-  padding: 20px;
-
 }
 
 .carCard img {
-  width: 274px;
   height: 268px;
-  gap: 0px;
-  border-radius: 14px;
-  object-fit: cover; /* Забезпечуємо, що зображення буде відображатися без зісковзування */
-  margin-bottom: 10px; /* Додаємо зазор під зображенням */
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 14px; 
 }
 
-.details {
-  width: 100%; /* Робимо деталі всю ширину карточки */
-}
 
 button {
   background-color: transparent; /* Фон кнопки прозорий */
@@ -30,33 +23,55 @@ button {
   align-items: center;
 }
 
-.iconHeart {
-  width: 18px;
-  height: 18px;
-  fill: #ff0000; /* Колір сердечка */
-  margin-right: 5px; /* Зазор між іконкою і текстом */
-}
-
-.favorite {
-  color: #ff0000; /* Колір тексту для улюбленої машини */
+.favorite,
+.notFavorite  {
+  color: var(--blue-btn); /* Колір тексту для улюбленої машини */
 }
 
 
 /*  */
 
 .descriptionCard {
-font-size: 12px;
-font-weight: 400;
-line-height: 18px;
-text-align: left;
-color: var(--light-grey);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: var(--light-grey);
+  margin-top: 8px;
 }
 
 .titleCard {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: var(--light-grey);
+}
 
-font-size: 16px;
-font-weight: 500;
-line-height: 24px;
-text-align: left;
-color: var(--light-grey);
+.titlePrice {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: var(--blue-btn);
+}
+
+.titleCar {
+  display: flex;
+  justify-content: space-between;
+}
+
+ .learnMore {
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: var(--blue-btn);
+  color: var(--white);
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.learnMore:hover {
+  background-color: var(--blue-btn-hover);
 }

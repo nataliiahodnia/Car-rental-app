@@ -1,4 +1,9 @@
-/* src/components/Map/Map.module.css */
+.mapContainer {
+  display: none;}
+
+@media screen and (min-width: 768px) {
+
+  /* src/components/Map/Map.module.css */
 
 .mapContainer {
   display: flex;
@@ -68,4 +73,6 @@
 
 .closeButton:hover {
   color: var(--wave-hover);
+}
+
 }

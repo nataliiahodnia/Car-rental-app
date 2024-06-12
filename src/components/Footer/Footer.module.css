@@ -1,8 +1,8 @@
 /* Footer.module.css */
 
 .footer {
-  background-color: rgba(46, 47, 66, 1);
-  color: #fff;
+  background-color: var(--navy-blue);
+  color: var(--white);
   display: flex;
   justify-content: center;
   align-items: flex-end; /* Вирівнюємо внизу */
@@ -31,16 +31,17 @@
 
 .socialIcons {
   display: flex;
-  gap: 10px;
+  gap: 24px;
 }
 
-.iconLink {
+/* .iconLink {
   text-decoration: none;
   color: #fff;
-}
+} */
 
 .icon {
   font-size: 24px;
+  color: var(--white-grey);
   transition: transform 0.3s ease; /* Анімація для ховера */
 }
 
@@ -79,3 +80,4 @@
     margin-bottom: 8px;
   }
 }
+

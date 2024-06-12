@@ -22,13 +22,13 @@ const Footer: React.FC = () => {
         <p>Follow us on social media:</p>
         <div className={styles.socialIcons}>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.icons}>
-            <FaFacebookSquare />
+            <FaFacebookSquare className={styles.icon} />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={styles.icons}>
-            <FaSquareTwitter />
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" >
+            <FaSquareTwitter className={styles.icon} />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.icons}>
-            <FaSquareInstagram />
+            <FaSquareInstagram className={styles.icon} />
           </a>
         </div>
       </div>

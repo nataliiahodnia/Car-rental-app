@@ -1,64 +1,71 @@
 /* src/components/FeedbackButton/FeedbackButton.module.css */
 
 .feedbackButtonContainer {
-     display: flex;
-     justify-content: flex-end; /* Розміщення кнопки праворуч */
+     display: none;
    }
-   
-   .feedbackButton {
-     display: flex;
-     align-items: center;
-     background-color: var(--navy-blue);
-     color: var(--white);
-     border: 1px solid var(--white);
-     border-radius: 15px;
-     padding: 10px 20px;
-     font-size: 14px;
-     font-weight: 400;
-     cursor: pointer;
-     transition: background-color 0.3s ease, color 0.3s ease;
+
+   @media screen and (min-width: 768px) {
+
+    .feedbackButtonContainer {
+      display: flex;
+      justify-content: flex-end; /* Розміщення кнопки праворуч */
+    }
+    
+    .feedbackButton {
+      display: flex;
+      align-items: center;
+      background-color: var(--navy-blue);
+      color: var(--white);
+      border: 1px solid var(--white);
+      border-radius: 15px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .feedbackButton:hover {
+      background-color: var(--wave-hover);
+      border: 1px solid var(--wave-hover);
+    }
+    
+    .icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+    
+    .modal {
+      position: fixed;
+      top: 50%;
+      right: 20px; /* Розміщення модального вікна праворуч */
+      transform: translateY(-50%);
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      z-index: 1000;
+    }
+    
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 999;
+    }
+    
+    .closeButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
    }
-   
-   .feedbackButton:hover {
-     background-color: var(--wave-hover);
-     border: 1px solid var(--wave-hover);
-   }
-   
-   .icon {
-     font-size: 24px;
-     margin-right: 10px;
-   }
-   
-   .modal {
-     position: fixed;
-     top: 50%;
-     right: 20px; /* Розміщення модального вікна праворуч */
-     transform: translateY(-50%);
-     background: #fff;
-     padding: 20px;
-     border-radius: 10px;
-     width: 90%;
-     max-width: 500px;
-     z-index: 1000;
-   }
-   
-   .overlay {
-     position: fixed;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background-color: rgba(0, 0, 0, 0.75);
-     z-index: 999;
-   }
-   
-   .closeButton {
-     position: absolute;
-     top: 10px;
-     right: 10px;
-     background: none;
-     border: none;
-     font-size: 20px;
-     cursor: pointer;
-   }
-   

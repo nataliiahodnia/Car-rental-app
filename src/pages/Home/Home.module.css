@@ -21,7 +21,7 @@
     width: 50%;
   }
 }
-   
+
 @media screen and (min-width: 1280px) {
   .titleHome {
     font-size: 40px;

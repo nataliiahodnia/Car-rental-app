@@ -52,7 +52,7 @@
 @media screen and (min-width: 768px) {
 
   .footer {
-  position: fixed;
+  /* position: fixed; */
     justify-content: space-around;
 
   }

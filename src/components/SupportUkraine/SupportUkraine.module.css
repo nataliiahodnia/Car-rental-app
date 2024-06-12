@@ -2,7 +2,7 @@
   padding: 20px;
   margin: 32px;
   background-color: var(--white-grey);
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 4px 8px var(--shadow);
   text-align: center;
 }
@@ -39,6 +39,7 @@
 
 .marquee {
   margin-top: 20px;
+  z-index: 0;
 }
 
 .marqueeContent {

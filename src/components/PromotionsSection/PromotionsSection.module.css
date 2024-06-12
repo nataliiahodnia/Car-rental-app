@@ -1,11 +1,5 @@
 .promotionsSection {
-  margin: 32px
-}
-
-.promotionsSection h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+  margin: 32px;
 }
 
 .promotionCards {
@@ -15,10 +9,17 @@
 }
 
 .promotionCard {
-  background-color: #f5f5f5;
+  background-color: var(--yellow);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.promotionCard:hover {
+  background-color: var(--white-grey);
+  transform: scale(1.06);
+  transition: transform 0.3s ease-in-out;
 }
 
 .promotionCard h3 {
@@ -32,12 +33,12 @@
 .promotionCard p {
   font-size: 14px;
   text-align: center;
-  color: #666;
+  color: var(--light-grey);
   margin-bottom: 15px;
 }
 
 .promotionCard .learnMore {
-  margin: 0 auto ;
+  margin: 0 auto;
   padding: 10px 20px;
   font-size: 14px;
   background-color: var(--blue-btn);
@@ -45,9 +46,7 @@
   border-radius: 15px;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
-
 }
-
 
 .promotionCard .learnMore:hover {
   background-color: var(--blue-btn-hover);
@@ -66,34 +65,47 @@
 }
 
 .modal {
-  background-color: #fff;
+  background-color: var(--white-grey);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 60%;
 }
 
 .modal h3 {
-  font-size: 24px;
+  font-size: 18px;
+
   margin-bottom: 10px;
-  color: #333;
+  color: var(--blue-btn);
+  text-align: center;
 }
 
 .modal p {
-  font-size: 16px;
-  color: #666;
+  font-size: 14px;
+  color: var(--light-grey);
+  margin: 0 auto;
   margin-bottom: 20px;
+  text-align: center;
+  width: 80%;
 }
 
 .closeButton {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: var(--blue-btn);
+  color: var(--white);
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .closeButton:hover {
-  background-color: #0056b3;
+  background-color: var(--blue-btn-hover);
+}
+
+@media screen and (min-width: 1280px) {
+  .modal {
+    width: 40%;
+  }
 }

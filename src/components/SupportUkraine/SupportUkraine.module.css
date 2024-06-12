@@ -1,92 +1,87 @@
-/* src/components/SupportUkraine/SupportUkraine.module.css */
-
 .supportSection {
-     background-color: #f5f5f5;
-     padding: 20px;
-     border-radius: 8px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     text-align: center;
-     margin: 32px;
-   }
-   
-   .title {
-     font-size: 18px;
-     font-weight: bold;
-     color: var(--blue-btn);
-     margin-bottom: 10px;
-     margin-top: 10px;
-   }
-   
-   .description {
-     font-size: 14px;
-     font-weight: 600;
-     color: var(--light-grey);
-     margin-bottom: 26px;
-   }
-   
-   .donationLink {
-     font-size: 16px;
-     font-weight: 800;
-     background-color: var(--yellow);
-     color: var(--blue-btn);
-     text-decoration: none;
-     padding: 10px 20px;
-     border-radius: 15px;
-     transition: background-color 0.3s ease, color 0.3s ease;
-     animation: heartbeat 1.5s infinite;
-   }
-   
-   .donationLink:hover {
-     background-color: var(--blue-btn);
-     color: var(--white);
-   }
-   
-   @keyframes heartbeat {
-     0% {
-       transform: scale(1);
-     }
-     25% {
-       transform: scale(1.05);
-     }
-     50% {
-       transform: scale(0.95);
-     }
-     75% {
-       transform: scale(1.05);
-     }
-     100% {
-       transform: scale(1);
-     }
-   }
-   
-   .marquee {
-     margin-top: 20px;
-   }
-   
-   .marqueeContent {
-     display: flex;
-     gap: 20px;
-   }
-   
-   .marqueeItem {
-     font-size: 16px;
-     color: var(--navy-blue);
-     font-weight: 600;
-   }
+  padding: 20px;
+  margin: 32px;
+  background-color: var(--white-grey);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow);
+  text-align: center;
+}
 
-   .marqueeItem {
+.title {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--blue-btn);
+}
 
-     line-height: 1.5;
-     color: var(--yellow);
-   }
-   
- 
-   
-   .support {
-     font-size: 18px;
-     font-weight: 800;
-     color: var(--blue-btn);
-   }
-   
-   
-   
+.description {
+  margin-bottom: 26px;
+  font-size: 14px;
+  color: var(--light-grey);
+  margin-bottom: 34px;
+}
+
+.donationLink {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 800;
+  background-color: var(--yellow);
+  color: var(--blue-btn);
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.donationLink:hover {
+  background-color: var(--blue-btn);
+  color: var(--white);
+}
+
+.marquee {
+  margin-top: 20px;
+}
+
+.marqueeContent {
+  display: flex;
+  gap: 20px;
+}
+
+.marqueeItem {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--light-grey);
+  line-height: 1.5;
+}
+
+.support {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--blue-btn);
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 21px;
+  }
+
+  .description {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
+    margin-bottom: 34px;
+  }
+
+  .marqueeItem {
+    font-size: 16px;
+  }
+
+  .support {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .title {
+    margin-bottom: 12px;
+  }
+}

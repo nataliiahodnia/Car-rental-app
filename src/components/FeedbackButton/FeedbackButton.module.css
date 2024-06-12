@@ -10,28 +10,42 @@
       display: flex;
       justify-content: flex-end; /* Розміщення кнопки праворуч */
     }
+
+    /* .promotionCard .learnMore {
+      margin: 0 auto;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: var(--blue-btn);
+      color: var(--white);
+      border-radius: 15px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    } */
+    
+    /* .promotionCard .learnMore:hover {
+      background-color: var(--blue-btn-hover);
+    } */
+
+
     
     .feedbackButton {
       display: flex;
-      align-items: center;
-      background-color: var(--navy-blue);
-      color: var(--white);
-      border: 1px solid var(--white);
-      border-radius: 15px;
+      margin: 0 auto;
       padding: 10px 20px;
       font-size: 14px;
-      font-weight: 400;
-      cursor: pointer;
+      background-color: var(--blue-btn);
+      color: var(--white);
+      border-radius: 15px;
+      text-decoration: none;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
     
     .feedbackButton:hover {
-      background-color: var(--wave-hover);
-      border: 1px solid var(--wave-hover);
+      background-color: var(--blue-btn-hover);
     }
     
     .icon {
-      font-size: 24px;
+      font-size: 14px;
       margin-right: 10px;
     }
     

@@ -12,24 +12,23 @@
 .toggleButton {
   display: flex;
   align-items: center;
-  background-color: var(--navy-blue);
-  border: 1px solid var(--white);
-  color: var(--white);
-  border-radius: 15px;
+  display: flex;
+  margin: 0 auto;
   padding: 10px 20px;
   font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
+  background-color: var(--blue-btn);
+  color: var(--white);
+  border-radius: 15px;
+  text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .toggleButton:hover {
-  background-color: var(--wave-hover);
-  border: 1px solid var(--wave-hover);
+  background-color: var(--blue-btn-hover);
 }
    
 .icon {
-  font-size: 23px;
+  font-size: 14px;
   margin-right: 10px;
 }
 

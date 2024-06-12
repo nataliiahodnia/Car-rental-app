@@ -13,13 +13,11 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <div className={styles.contactInfo}>
         <h3>Contact Information</h3>
-        <p>Email: example@example.com</p>
-        <p>Phone: +1234567890</p>
-        <p>Address: 123 Example Street, City, Country</p>
+        <p>Email: carrentua@plt.com</p>
+        <p>Phone: +38066000000</p>
+        <p>Address: 123 Peremogy Street, Poltava, Ukraine</p>
       </div>
       <div className={styles.additionalInfo}>
-        <h3>Additional Information</h3>
-        <p>Follow us on social media:</p>
         <div className={styles.socialIcons}>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.icons}>
             <FaFacebookSquare className={styles.icon} />

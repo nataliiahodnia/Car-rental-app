@@ -21,7 +21,7 @@ const FeedbackButton: React.FC = () => {
     <div className={styles.feedbackButtonContainer}>
       <button onClick={openModal} className={styles.feedbackButton}>
         <BiCommentEdit  className={styles.icon} />
-        Leave your feedback
+        Feedback
       </button>
       <Modal
         isOpen={isModalOpen}

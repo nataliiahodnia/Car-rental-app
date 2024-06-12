@@ -41,25 +41,24 @@
 
 .icon {
   font-size: 24px;
-  color: var(--white-grey);
+  color: var(--blue-btn);
   transition: transform 0.3s ease; /* Анімація для ховера */
 }
 
 .icon:hover {
-  color: var(--wave-hover);
-  transform: scale(1.2); /* Збільшуємо іконку при наведенні курсора */
+  color: var(--white-grey);
+  transform: scale(1.2);
 }
 
 @media screen and (min-width: 768px) {
-
-  .footer {
-  /* position: fixed; */
-    justify-content: space-around;
-
+  .iconFooter {
+    font-size: 12px;
+    color: var(--blue-btn);
   }
 
-  .socialIcons {
-    margin-top: 21px;
+  .footer {
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   .contactInfo,
@@ -69,15 +68,14 @@
 
   .contactInfo h3,
   .additionalInfo h3 {
-    display: block; 
-    font-size: 14px;
+    display: block;
+    font-size: 12px;
     margin-bottom: 10px;
   }
 
   .contactInfo p,
   .additionalInfo p {
-    display: block; 
+    display: block;
     margin-bottom: 8px;
   }
 }
-

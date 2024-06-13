@@ -4,23 +4,27 @@ import CarCard from '../CarCard/CarCard';
 import styles from './CarList.module.css';
 
 interface Props {
-  adverts: Advert[];
   filteredAdverts: Advert[]; // Додаємо проп для відфільтрованих оголошень
+  pageSize: number; // Додаємо проп для розміру сторінки
 }
 
-const CarList: React.FC<Props> = ({ filteredAdverts }) => { // Змінюємо проп
-  const [visibleAdvertCount, setVisibleAdvertCount] = useState(12);
+const CarList: React.FC<Props> = ({ filteredAdverts, pageSize }) => { // Змінюємо проп
+  const [currentPage, setCurrentPage] = useState(1); // Поточна сторінка
 
   const loadMore = () => {
-    setVisibleAdvertCount(prevCount => prevCount + 12);
+    setCurrentPage(prevPage => prevPage + 1);
   };
+
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  const visibleAdverts = filteredAdverts.slice(startIndex, endIndex);
 
   return (
     <div className={styles.carList}>
-      {filteredAdverts.slice(0, visibleAdvertCount).map(advert => ( // Змінюємо на використання відфільтрованих оголошень
+      {visibleAdverts.map(advert => (
         <CarCard key={advert.id} advert={advert} />
       ))}
-      {filteredAdverts.length > visibleAdvertCount && (
+      {filteredAdverts.length > endIndex && (
         <div className={styles.loadMoreButtonContainer}>
           <button className={styles.loadMoreButton} onClick={loadMore}>
             Load more

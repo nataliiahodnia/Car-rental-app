@@ -1,20 +1,18 @@
-// src/pages/Favorites/Favorites.tsx
-
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectAllFavoriteCars } from '../../redux/slices/favoritesSlice'; // Оновлено імпорт
+import { selectAllFavoriteCars } from '../../redux/slices/favoritesSlice';
 import { RootState } from '../../redux/store';
 import styles from './Favorites.module.css';
 import CarList from '../../components/CarList/CarList';
-import { Advert } from '../../redux/slices/advertsSlice'; // Додано імпорт
+import { Advert } from '../../redux/slices/advertsSlice';
 
 const FavoritesPage: React.FC = () => {
-  const favoriteCars = useSelector((state: RootState) => selectAllFavoriteCars(state)); // Використання RootState
+  const favoriteCars = useSelector((state: RootState) => selectAllFavoriteCars(state));
 
   return (
     <div className={styles.favoritesPage}>
       <h1>My Favorite Cars</h1>
-      <CarList adverts={favoriteCars as Advert[]} /> {/* Використання правильного типу даних */}
+      <CarList filteredAdverts={favoriteCars as Advert[]} pageSize={12} />
     </div>
   );
 };

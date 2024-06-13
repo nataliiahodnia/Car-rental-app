@@ -4,8 +4,8 @@ import CarCard from '../CarCard/CarCard';
 import styles from './CarList.module.css';
 
 interface Props {
-  filteredAdverts: Advert[];
-  pageSize: number;
+  filteredAdverts: Advert[]; 
+  pageSize: number; 
 }
 
 const CarList: React.FC<Props> = ({ filteredAdverts, pageSize }) => {
@@ -15,11 +15,9 @@ const CarList: React.FC<Props> = ({ filteredAdverts, pageSize }) => {
     setCurrentPage(prevPage => prevPage + 1);
   };
 
-  const startIndex = 0;
-  const endIndex = currentPage * pageSize;
-  const visibleAdverts = filteredAdverts.slice(startIndex, endIndex);
+  const visibleAdverts = Array.isArray(filteredAdverts) ? filteredAdverts.slice(0, currentPage * pageSize) : [];
 
-  const loadMoreButton = filteredAdverts.length > endIndex && (
+  const loadMoreButton = filteredAdverts.length > currentPage * pageSize && (
     <div className={styles.loadMoreButtonContainer}>
       <button className={styles.loadMoreButton} onClick={loadMore}>
         Load more

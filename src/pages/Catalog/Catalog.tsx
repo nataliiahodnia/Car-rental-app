@@ -8,6 +8,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit';
 import { Action } from '@reduxjs/toolkit';
 
 import CarList from '../../components/CarList/CarList';
+import SearchFilter from '../../components/SearchFilter/SearchFilter'; 
 
 const CatalogPage: React.FC = () => {
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
@@ -20,8 +21,9 @@ const CatalogPage: React.FC = () => {
 
   return (
     <div>
+            <SearchFilter /> 
       <h2>Catalog Page</h2>
-      <CarList adverts={adverts} />
+      <CarList adverts={adverts} filteredAdverts={[]} />
     </div>
   );
 };

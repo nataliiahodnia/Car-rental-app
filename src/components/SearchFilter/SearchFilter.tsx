@@ -14,7 +14,7 @@ interface Props {
 const SearchFilter: React.FC<Props> = ({ onFilter }) => {
     const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
     const [selectedMake, setSelectedMake] = useState<string>('all');
-    const [minPrice, setMinPrice] = useState<number | ''>(''); 
+    const [minPrice, setMinPrice] = useState<number | null>(null); // Змінено тип та значення за замовчуванням
     const allAdverts = useSelector((state: RootState) => selectAllAdverts(state));
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
             filteredAdverts = filteredAdverts.filter(advert => advert.make === selectedMake);
         }
 
-        if (minPrice !== '') {
+        if (minPrice !== null && !isNaN(minPrice)) { // Змінено умову
             filteredAdverts = filteredAdverts.filter(advert => advert.rentalPrice >= minPrice);
         }
 
@@ -40,7 +40,7 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
     };
 
     const handleMinPriceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setMinPrice(e.target.value === '' ? '' : Number(e.target.value));
+        setMinPrice(e.target.value === '' ? null : parseInt(e.target.value, 10)); // Змінено умову та парсинг
     };
 
     const generatePriceOptions = (start: number, step: number, count: number) => {
@@ -72,7 +72,7 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
                         <option key={make} value={make}>{make}</option>
                     ))}
                 </select>
-                <select value={minPrice} onChange={handleMinPriceChange}>
+                <select value={minPrice === null ? '' : minPrice} onChange={handleMinPriceChange}> {/* Змінено умову */}
                     <option value="">Min Price</option>
                     {priceOptions.map((price) => (
                         <option key={price} value={price}>

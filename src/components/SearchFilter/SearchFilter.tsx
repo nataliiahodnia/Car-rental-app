@@ -6,7 +6,7 @@ import { RootState } from '../../redux/store';
 import makes from '../../data/makes.json'; 
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { Action } from '@reduxjs/toolkit';
-import styles from "./SearchFilter.module.css";
+import styles from './SearchFilter.module.css';
 
 interface Props {
   onFilter: (filteredAdverts: Advert[]) => void;
@@ -52,12 +52,12 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
     const getSuggestionValue = (suggestion: string) => suggestion;
 
     const renderSuggestion = (suggestion: string) => (
-        <div>
+        <div className={styles.suggestion}>
             {suggestion}
         </div>
     );
 
-    const inputProps = {
+    const inputProps: Autosuggest.InputProps<string> = {
         placeholder: 'Choose a car',
         value,
         onChange: (_: React.FormEvent<unknown>, { newValue }: ChangeEvent) => {
@@ -78,6 +78,7 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
                         inputProps={inputProps}
                         theme={{
                             container: styles.container,
+                            input: styles.input,
                             suggestionsContainer: styles.suggestionsContainer,
                             suggestion: styles.suggestion,
                             suggestionHighlighted: styles.suggestionHighlighted

@@ -1,18 +1,31 @@
-/* CarDetailsModal.module.css */
-
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
   outline: none;
-  max-width: 80%; /* змініть за потребою */
-  max-height: 80%; /* змініть за потребою */
-  overflow-y: auto; /* додати прокрутку при потребі */
-  z-index: 1000; /* змініть за потребою */
+  /* width: 541px; */
+  height: 752px;
+  /* gap: 0px; */
+  border-radius: 24px;
+  /* opacity: 0px; */
+
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .overlay {
@@ -21,37 +34,47 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* прозорість оверлею */
-  z-index: 999; /* змініть за потребою, менше ніж модальне вікно */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeOverlay 0.3s ease-out;
+}
+
+@keyframes fadeOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modalContent {
   position: relative;
 }
 
-.closeButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 8px;
-  font-size: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #000000;
+.modalContentItem {
+  padding: 40px;
 }
 
-.carImg {
-  width: 461px;
-height: 248px;
-top: 40px;
-left: 40px;
-gap: 0px;
-border-radius: 14px 0px 0px 0px;
-opacity: 0px;
+.closeButton {
+  position: absolute;
+  right: 10px;
+  padding: 8px;
+  font-size: 34px;
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
+.closeButton:hover {
+  color: #ff0000;
+}
+
+.carImg { 
+  width: 461px;
+  height: 248px;
+  border-radius: 14px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .details {
@@ -64,4 +87,24 @@ opacity: 0px;
 
 .details p {
   margin: 8px 0;
+}
+
+.rentalLink {
+  display: block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: var(--blue-btn);
+  color: var(--white);
+  border-radius: 15px;
+  text-decoration: none;
+  text-align: center;
+  width: 168px;
+  height: 44px;
+  padding: 12px 50px 12px 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.rentalLink:hover {
+  background-color: var(--blue-btn-hover);
 }

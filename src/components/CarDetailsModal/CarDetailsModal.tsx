@@ -26,6 +26,7 @@ const CarDetailsModal: React.FC<Props> = ({ isOpen, onClose, car }) => {
         <button className={styles.closeButton} onClick={onClose}>
           &times;
         </button>
+        <div className={styles.modalContentItem}>
         <img className={styles.carImg} src={car.img} alt={`${car.make} ${car.model}`} />
         <div className={styles.details}>
           <h2>{`${car.make} ${car.model}`}</h2>
@@ -42,9 +43,10 @@ const CarDetailsModal: React.FC<Props> = ({ isOpen, onClose, car }) => {
           <p>Mileage: {car.mileage}</p>
           <p>
             <a href="tel:+380730000000" className={styles.rentalLink}>
-              Rental car - Call Now: +380730000000
+              Rental car
             </a>
           </p>
+          </div>
         </div>
       </div>
     </Modal>

@@ -1,5 +1,3 @@
-// src/redux/slices/favoritesSlice.ts
-
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
@@ -19,7 +17,7 @@ interface FavoriteCar {
   rentalCompany: string;
   address: string;
   rentalConditions: string;
-  mileage: number;
+  mileage: string;
 }
 
 interface FavoritesState {

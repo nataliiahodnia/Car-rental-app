@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { RootState } from '../store'; // Змінено імпорт
+import { RootState } from '../store';
+import axios from 'axios';
 
 export interface Advert {
   id: number;
@@ -17,7 +18,7 @@ export interface Advert {
   rentalCompany: string;
   address: string;
   rentalConditions: string;
-  mileage: number;
+  mileage: string;
 }
 
 interface AdvertsState {
@@ -32,18 +33,10 @@ const initialState: AdvertsState = {
   error: null,
 };
 
-
-// Видалено функції fetchAdvertsRequest, fetchAdvertsSuccess, fetchAdvertsFailure
-
-// Створимо асинхронний thunk для отримання оголошень
 export const fetchAdverts = createAsyncThunk('adverts/fetchAdverts', async () => {
   try {
-    const response = await fetch('https://66684690f53957909ff74f2c.mockapi.io/api/v1/cars');
-    if (!response.ok) {
-      throw new Error('Failed to fetch data');
-    }
-    const data = await response.json();
-    return data as Advert[];
+    const response = await axios.get<Advert[]>('https://66684690f53957909ff74f2c.mockapi.io/api/v1/cars');
+    return response.data;
   } catch (error) {
     throw new Error((error as Error).message);
   }

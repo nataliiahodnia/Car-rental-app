@@ -3,17 +3,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff;
+  background-color: var(--white);
   outline: none;
-  /* width: 541px; */
-  height: 752px;
-  /* gap: 0px; */
+  min-height: 752px;
   border-radius: 24px;
-  /* opacity: 0px; */
 
   overflow-y: auto;
   z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow);
   animation: fadeIn 0.3s ease-out;
 }
 
@@ -67,10 +64,10 @@
 }
 
 .closeButton:hover {
-  color: #ff0000;
+  color: var(--blue-btn-hover);
 }
 
-.carImg { 
+.carImg {
   width: 461px;
   height: 248px;
   border-radius: 14px;
@@ -81,17 +78,64 @@
   margin-top: 20px;
 }
 
-.details h2 {
+.detailsTitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
   margin-top: 0;
+  /* margin-bottom: 14px; */
 }
 
-.details p {
-  margin: 8px 0;
+.model {
+  color: var(--blue-btn);
+}
+
+.descriptionCard {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: rgba(18, 20, 23, 0.5);
+  max-width: 277px;
+}
+
+.description {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  max-width: 461px;
+}
+
+.descriptionItem {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; 
+  margin-bottom: 24px;
+  margin-top: 8px;
+  max-width: 461px;
+}
+
+.oval {
+  padding: 10px 15px;
+  border-radius: 25px;
+  background-color: #f9f9f9; /* фон овала */
+  white-space: nowrap; /* запобігає переносу тексту */
+}
+
+.mileage {
+  color: var(--blue-btn); /* змініть на бажаний колір */
+}
+
+.price {
+  color: var(--blue-btn); /* змініть на бажаний колір */
 }
 
 .rentalLink {
   display: block;
-  margin: 20px 0;
   padding: 10px 20px;
   font-size: 14px;
   background-color: var(--blue-btn);

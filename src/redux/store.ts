@@ -12,7 +12,6 @@ const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-// Додамо AppThunk
 export type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
 
 store.dispatch(fetchAdverts());

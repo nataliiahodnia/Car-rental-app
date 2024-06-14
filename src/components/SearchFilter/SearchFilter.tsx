@@ -32,12 +32,14 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
         onFilter(filteredAdverts);
     }, [value, allAdverts, onFilter]);
 
+    const allMakes = makes.map(make => make.toLowerCase());
+
     const getSuggestions = (inputValue: string) => {
         const inputLength = inputValue.length;
         const inputValueLower = inputValue.toLowerCase();
 
-        return inputLength === 0 ? [] : makes.filter(make =>
-            make.toLowerCase().slice(0, inputLength) === inputValueLower
+        return inputLength === 0 ? allMakes : allMakes.filter(make =>
+            make.includes(inputValueLower)
         );
     };
 
@@ -57,6 +59,7 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
         </div>
     );
 
+
     const inputProps: Autosuggest.InputProps<string> = {
         placeholder: 'Choose a car',
         value,
@@ -67,7 +70,7 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
 
     return (
         <div className={styles.filters}>
-            <form>
+            <form className={styles.form}>
                 <div className={styles.dropdown}>
                     <Autosuggest
                         suggestions={suggestions}
@@ -85,6 +88,18 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
                         }}
                     />
                 </div>
+                <select
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    className={styles.select}
+                >
+                    <option value="">All Makes</option>
+                    {makes.map((make, index) => (
+                        <option key={index} value={make}>
+                            {make}
+                        </option>
+                    ))}
+                </select>
             </form>
         </div>
     );

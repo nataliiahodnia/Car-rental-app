@@ -6,6 +6,8 @@ import makes from '../../data/makes.json';
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { Action } from '@reduxjs/toolkit';
 import axios from 'axios'; // Додано імпорт Axios
+import styles from "./SearchFilter.module.css";
+import dropdownStyles from "./Dropdown.module.css"; // Імпорт стилів для випадаючого вікна
 
 interface Props {
   onFilter: (filteredAdverts: Advert[]) => void;
@@ -14,7 +16,6 @@ interface Props {
 const SearchFilter: React.FC<Props> = ({ onFilter }) => {
     const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
     const [selectedMake, setSelectedMake] = useState<string>('all');
-    const [minPrice, setMinPrice] = useState<number | null>(null); // Змінено тип та значення за замовчуванням
     const allAdverts = useSelector((state: RootState) => selectAllAdverts(state));
 
     useEffect(() => {
@@ -28,26 +29,12 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
             filteredAdverts = filteredAdverts.filter(advert => advert.make === selectedMake);
         }
 
-        if (minPrice !== null && !isNaN(minPrice)) { // Змінено умову
-            filteredAdverts = filteredAdverts.filter(advert => advert.rentalPrice >= minPrice);
-        }
-
         onFilter(filteredAdverts);
-    }, [selectedMake, minPrice, allAdverts, onFilter]);
+    }, [selectedMake, allAdverts, onFilter]);
 
     const handleMakeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedMake(e.target.value);
     };
-
-    const handleMinPriceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setMinPrice(e.target.value === '' ? null : parseInt(e.target.value, 10)); // Змінено умову та парсинг
-    };
-
-    const generatePriceOptions = (start: number, step: number, count: number) => {
-        return Array.from({ length: count }, (_, i) => start + i * step);
-    };
-
-    const priceOptions = generatePriceOptions(0, 10, 21);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -64,22 +51,16 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
     }, [onFilter]);
 
     return (
-        <div className="filters">
+        <div className={styles.filters}>
             <form>
-                <select value={selectedMake} onChange={handleMakeChange}>
-                    <option value="all">All</option>
-                    {makes.map((make: string) => (
-                        <option key={make} value={make}>{make}</option>
-                    ))}
-                </select>
-                <select value={minPrice === null ? '' : minPrice} onChange={handleMinPriceChange}> {/* Змінено умову */}
-                    <option value="">Min Price</option>
-                    {priceOptions.map((price) => (
-                        <option key={price} value={price}>
-                            ${price}
-                        </option>
-                    ))}
-                </select>
+                <div className={dropdownStyles.dropdown}>
+                    <select className={styles.select} value={selectedMake} onChange={handleMakeChange}>
+                        <option value="all">Сhoose a car</option>
+                        {makes.map((make: string, index: number) => ( // Додано унікальний ключ
+                            <option key={index} value={make}>{make}</option>
+                        ))}
+                    </select>
+                </div>
             </form>
         </div>
     );

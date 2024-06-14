@@ -175,7 +175,7 @@
     "address": "456 Peremogy, Poltava, Ukraine",
     "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit required",
     "mileage": 4000,
-    "id": 9584
+    "id": 8584
   },
   {
     "year": 2021,
@@ -821,6 +821,6 @@
      "address": "123 Adventure Lane, Poltava, Ukraine",
      "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit required",
      "mileage": 78000,
-     "id": 9370
+     "id": 9970
    }
 ]

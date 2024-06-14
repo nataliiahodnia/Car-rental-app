@@ -29,7 +29,6 @@ const FeedbackButton: React.FC = () => {
         className={styles.modal}
         overlayClassName={styles.overlay}
       >
-        <button onClick={closeModal} className={styles.closeButton}>Закрити</button>
         <FeedbackForm />
       </Modal>
     </div>

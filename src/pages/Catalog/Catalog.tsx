@@ -7,6 +7,7 @@ import { Action } from '@reduxjs/toolkit';
 
 import CarList from '../../components/CarList/CarList';
 import SearchFilter from '../../components/SearchFilter/SearchFilter';
+import styles from "./Catalog.module.css";
 
 const CatalogPage: React.FC = () => {
   const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
@@ -18,7 +19,7 @@ const CatalogPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Catalog Page</h2>
+      <h2 className={styles.titleCatalog}>Catalog Page</h2>
       <SearchFilter onFilter={setFilteredAdverts} />
       <CarList filteredAdverts={filteredAdverts} pageSize={12} />
     </div>

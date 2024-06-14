@@ -1,0 +1,26 @@
+/* Dropdown.module.css */
+
+.dropdown {
+     position: relative;
+   }
+   
+   .select-container {
+     position: absolute;
+     top: 100%;
+     left: 0;
+     z-index: 1;
+     background-color: #ffffff;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     padding: 5px 0;
+   }
+   
+   .select-option {
+     padding: 5px 10px;
+     cursor: pointer;
+   }
+   
+   .select-option:hover {
+     background-color: #f0f0f0;
+   }
+   

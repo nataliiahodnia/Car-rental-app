@@ -4,7 +4,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareTwitter } from "react-icons/fa6";
 import Map from "../Map/Map";
-import FeedbackButton from "../FeedbackButton/FeedbackButton";
+// import FeedbackButton from "../FeedbackButton/FeedbackButton";
 import { MdEmail } from "react-icons/md";
 import { FaSquarePhone } from "react-icons/fa6";
 import { GoHomeFill } from "react-icons/go";
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
         </p>
       </div>
       {showMap && <Map />}
-      <FeedbackButton />
+      {/* <FeedbackButton /> */}
       <div className={styles.additionalInfo}>
         <div className={styles.socialIcons}>
           <a

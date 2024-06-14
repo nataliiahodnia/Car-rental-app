@@ -1,12 +1,18 @@
-// src/components/FeedbackForm/FeedbackForm.tsx
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./FeedbackForm.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import Modal from "react-modal";
 
 const FeedbackForm: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [feedback, setFeedback] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    Modal.setAppElement("#root"); // Встановлення основного елемента для модального вікна
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,6 +28,11 @@ const FeedbackForm: React.FC = () => {
     setName("");
     setEmail("");
     setFeedback("");
+    setIsModalOpen(true); // Після відправлення форми відкриваємо модальне вікно
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -57,10 +68,26 @@ const FeedbackForm: React.FC = () => {
             required
           ></textarea>
         </div>
-        <button type="submit" className={styles.submitButton}>
-          Send
-        </button>
+        <div className={styles.buttonGroup}>
+          <button type="submit" className={styles.submitButton}>
+            Send
+          </button>
+        </div>
       </form>
+      {/* Модальне вікно, яке відображатиметься після відправлення форми */}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        className={styles.modal}
+        overlayClassName={styles.overlay}
+      >
+        <div className={styles.modalContent}>
+          <button className={styles.closeButton} onClick={closeModal}>
+            <FontAwesomeIcon icon={faTimes} />
+          </button>
+          <p>Thank you for your feedback!</p>
+        </div>
+      </Modal>
     </div>
   );
 };

@@ -1,14 +1,11 @@
 [
      "Tesla",
-     "Fiat",
-     "Mini",
-     "Ford",
      "Jeep",
      "Toyota",
      "Mitsubishi",
      "Buick",
      "Volvo",
-     "Hummer",
+     "HUMMER",
      "Subaru",
      "Nissan",
      "Lincoln",
@@ -22,6 +19,5 @@
      "Audi",
      "BMW",
      "Chevrolet",
-     "Kia",
-     "Land Rover"
+     "Kia"
  ]

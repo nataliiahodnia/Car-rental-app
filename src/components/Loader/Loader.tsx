@@ -1,17 +1,18 @@
-import { Grid } from "react-loader-spinner";
-// import sендуі from "./Loader.module.css";
+import { Rings } from "react-loader-spinner";
+import styles from "./Loader.module.css";
 
 export default function Loader() {
   return (
-<Grid
-  visible={true}
-  height="80"
-  width="80"
-  color="#4fa94d"
-  ariaLabel="grid-loading"
-  radius="12.5"
-  wrapperStyle={{}}
-  wrapperClass="grid-wrapper"
-  />
+    <div className={styles.loaderContainer}>
+      <Rings
+        visible={true}
+        height="120"
+        width="120"
+        color="#eeb60b"
+        ariaLabel="rings-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      />
+    </div>
   );
 }

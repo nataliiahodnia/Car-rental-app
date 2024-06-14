@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import Autosuggest, { SuggestionsFetchRequestedParams, ChangeEvent } from 'react-autosuggest';
 import { useDispatch, useSelector } from 'react-redux';
 import { Advert, fetchAdverts, selectAllAdverts } from '../../redux/slices/advertsSlice';
 import { RootState } from '../../redux/store';
 import makes from '../../data/makes.json'; 
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { Action } from '@reduxjs/toolkit';
-import axios from 'axios'; // Додано імпорт Axios
 import styles from "./SearchFilter.module.css";
-import dropdownStyles from "./Dropdown.module.css"; // Імпорт стилів для випадаючого вікна
 
 interface Props {
   onFilter: (filteredAdverts: Advert[]) => void;
@@ -15,7 +14,8 @@ interface Props {
 
 const SearchFilter: React.FC<Props> = ({ onFilter }) => {
     const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
-    const [selectedMake, setSelectedMake] = useState<string>('all');
+    const [value, setValue] = useState<string>('');
+    const [suggestions, setSuggestions] = useState<string[]>([]);
     const allAdverts = useSelector((state: RootState) => selectAllAdverts(state));
 
     useEffect(() => {
@@ -25,41 +25,64 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
     useEffect(() => {
         let filteredAdverts = allAdverts;
 
-        if (selectedMake !== 'all') {
-            filteredAdverts = filteredAdverts.filter(advert => advert.make === selectedMake);
+        if (value !== '') {
+            filteredAdverts = filteredAdverts.filter(advert => advert.make === value);
         }
 
         onFilter(filteredAdverts);
-    }, [selectedMake, allAdverts, onFilter]);
+    }, [value, allAdverts, onFilter]);
 
-    const handleMakeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedMake(e.target.value);
+    const getSuggestions = (inputValue: string) => {
+        const inputLength = inputValue.length;
+        const inputValueLower = inputValue.toLowerCase();
+
+        return inputLength === 0 ? [] : makes.filter(make =>
+            make.toLowerCase().slice(0, inputLength) === inputValueLower
+        );
     };
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('/api/adverts');
-                const fetchedAdverts: Advert[] = response.data;
-                onFilter(fetchedAdverts);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
+    const onSuggestionsFetchRequested = ({ value }: SuggestionsFetchRequestedParams) => {
+        setSuggestions(getSuggestions(value));
+    };
 
-        fetchData();
-    }, [onFilter]);
+    const onSuggestionsClearRequested = () => {
+        setSuggestions([]);
+    };
+
+    const getSuggestionValue = (suggestion: string) => suggestion;
+
+    const renderSuggestion = (suggestion: string) => (
+        <div>
+            {suggestion}
+        </div>
+    );
+
+    const inputProps = {
+        placeholder: 'Choose a car',
+        value,
+        onChange: (_: React.FormEvent<unknown>, { newValue }: ChangeEvent) => {
+            setValue(newValue);
+        }
+    };
 
     return (
         <div className={styles.filters}>
             <form>
-                <div className={dropdownStyles.dropdown}>
-                    <select className={styles.select} value={selectedMake} onChange={handleMakeChange}>
-                        <option value="all">Сhoose a car</option>
-                        {makes.map((make: string, index: number) => ( // Додано унікальний ключ
-                            <option key={index} value={make}>{make}</option>
-                        ))}
-                    </select>
+                <div className={styles.dropdown}>
+                    <Autosuggest
+                        suggestions={suggestions}
+                        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                        onSuggestionsClearRequested={onSuggestionsClearRequested}
+                        getSuggestionValue={getSuggestionValue}
+                        renderSuggestion={renderSuggestion}
+                        inputProps={inputProps}
+                        theme={{
+                            container: styles.container,
+                            suggestionsContainer: styles.suggestionsContainer,
+                            suggestion: styles.suggestion,
+                            suggestionHighlighted: styles.suggestionHighlighted
+                        }}
+                    />
                 </div>
             </form>
         </div>

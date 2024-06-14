@@ -11,7 +11,7 @@ const FavoritesPage: React.FC = () => {
 
   return (
     <div className={styles.favoritesPage}>
-      <h1>My Favorite Cars</h1>
+      <h1 className={styles.titleFavorite}>My Favorite Cars</h1>
       <CarList filteredAdverts={favoriteCars as Advert[]} pageSize={12} />
     </div>
   );

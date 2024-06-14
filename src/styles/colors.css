@@ -10,3 +10,11 @@
   --white-grey: #f5f5f5;
   --shadow: rgba(0, 0, 0, 0.1);
 }
+
+html {
+  --cursor-color: #333
+}
+
+html.dark-mode {
+  --cursor-color: #fff
+}

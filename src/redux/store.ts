@@ -1,11 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import advertsReducer, { fetchAdverts } from './slices/advertsSlice';
 import favoritesReducer from './slices/favoritesSlice';
+// import loadingReducer from "./slices/loadingSlice";
+
 
 const store = configureStore({
   reducer: {
     adverts: advertsReducer,
     favorites: favoritesReducer,
+    // loading: loadingReducer,
   },
 });
 

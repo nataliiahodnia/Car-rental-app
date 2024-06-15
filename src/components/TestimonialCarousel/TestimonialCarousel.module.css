@@ -8,32 +8,31 @@
   border-radius: 20px;
   align-content: flex-start;
   justify-content: space-evenly;
-   }
-   
-   .testimonial {
-    scroll-snap-align: start;
-    min-width: 200px;
-    min-height: 80px;
-    padding: 20px;
-    background-color: var(--white-grey);
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-   }
-   
-   .testimonial:hover {
-    transform: scale(1.06);
-   }
-   
-   .text {
-     font-size: 14px;
-     color: var(--navy-blue);
-     margin-bottom: 10px;
-   }
-   
-   .author {
-    font-weight: 800;
-     font-size: 14px;
-     color: var(--blue-btn);
-   }
-   
+}
+
+.testimonial {
+  scroll-snap-align: start;
+  min-width: 200px;
+  min-height: 80px;
+  padding: 20px;
+  background-color: var(--white-grey);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.testimonial:hover {
+  transform: scale(1.06);
+}
+
+.text {
+  font-size: 14px;
+  color: var(--navy-blue);
+  margin-bottom: 10px;
+}
+
+.author {
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--blue-btn);
+}

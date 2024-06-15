@@ -84,7 +84,6 @@
   line-height: 24px;
   text-align: left;
   margin-top: 0;
-  /* margin-bottom: 14px; */
 }
 
 .model {
@@ -122,16 +121,16 @@
 .oval {
   padding: 10px 15px;
   border-radius: 25px;
-  background-color: #f9f9f9; /* фон овала */
-  white-space: nowrap; /* запобігає переносу тексту */
+  background-color: #f9f9f9; 
+  white-space: nowrap; 
 }
 
 .mileage {
-  color: var(--blue-btn); /* змініть на бажаний колір */
+  color: var(--blue-btn);
 }
 
 .price {
-  color: var(--blue-btn); /* змініть на бажаний колір */
+  color: var(--blue-btn);
 }
 
 .rentalLink {

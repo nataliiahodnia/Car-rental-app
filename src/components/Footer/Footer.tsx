@@ -3,10 +3,10 @@ import styles from "./Footer.module.css";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareTwitter } from "react-icons/fa6";
-import Map from "../Map/Map";
 import { MdEmail } from "react-icons/md";
 import { FaSquarePhone } from "react-icons/fa6";
 import { GoHomeFill } from "react-icons/go";
+import Map from "../Map/Map";
 
 const Footer: React.FC = () => {
   const [showMap] = useState(true);

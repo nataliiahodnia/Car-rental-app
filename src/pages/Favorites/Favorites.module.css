@@ -1,3 +1,25 @@
 .titleFavorite {
      display: none;
 }
+
+.noFavorites {
+     margin: 32px;
+     display: flex;
+     justify-content: center;
+     color: var(--light-grey-fav);
+     align-items: center;
+     flex-direction: column;
+}
+
+.noFavoritesIcon {
+     margin-top: 180px;
+font-size: 90px;
+}
+
+.noFavoritesMessage {
+font-size: 18px;
+text-align: center;
+margin-top: 30px;
+font-weight: 700;
+}
+

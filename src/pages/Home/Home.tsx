@@ -6,7 +6,6 @@ import Footer from "../../components/Footer/Footer";
 import PromotionsSection from "../../components/PromotionsSection/PromotionsSection";
 
 const HomePage: React.FC = () => {
-
   return (
     <div className={styles.container}>
       <SupportUkraine />

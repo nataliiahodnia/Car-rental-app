@@ -3,11 +3,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  /* src/components/Map/Map.module.css */
-
   .mapContainer {
     display: flex;
-    justify-content: flex-end; /* Розміщення кнопки праворуч */
+    justify-content: flex-end;
   }
 
   .popupContent {
@@ -46,7 +44,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Півпрозорий чорний фон */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +57,6 @@
     max-width: 90%;
     max-height: 90%;
     overflow-y: auto;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     flex-direction: column;
     align-items: flex-end;
     gap: -30px;
@@ -81,8 +78,8 @@
   }
 
   .map {
-    width: 500px; /* Розміри картки */
-    height: 500px; /* Розміри картки */
+    width: 500px;
+    height: 500px;
     border-radius: 10px;
   }
 }

@@ -1,22 +1,20 @@
-/* Footer.module.css */
-
 .footer {
   background-color: var(--navy-blue);
   color: var(--white);
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Вирівнюємо внизу */
+  align-items: flex-end;
   padding: 20px;
   align-items: flex-start;
   bottom: 0;
   left: 0;
   width: 100%;
-  transition: all 0.3s ease; /* Анімація для плавного переходу */
+  transition: all 0.3s ease;
 }
 
 .contactInfo,
 .additionalInfo {
-  text-align: left; /* Вирівнюємо контактну інформацію до лівого краю */
+  text-align: left;
 }
 
 .contactInfo h3,
@@ -34,15 +32,10 @@
   gap: 24px;
 }
 
-/* .iconLink {
-  text-decoration: none;
-  color: #fff;
-} */
-
 .icon {
   font-size: 24px;
   color: var(--blue-btn);
-  transition: transform 0.3s ease; /* Анімація для ховера */
+  transition: transform 0.3s ease;
 }
 
 .icon:hover {
@@ -63,7 +56,7 @@
 
   .contactInfo,
   .additionalInfo {
-    text-align: left; /* Вирівнюємо контактну інформацію до лівого краю */
+    text-align: left;
   }
 
   .contactInfo h3,

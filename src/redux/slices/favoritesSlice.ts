@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 interface FavoriteCar {
   id: number;
@@ -21,30 +21,33 @@ interface FavoriteCar {
 }
 
 interface FavoritesState {
-  favoriteCars: FavoriteCar[]; 
+  favoriteCars: FavoriteCar[];
 }
 
 const initialState: FavoritesState = {
-  favoriteCars: JSON.parse(localStorage.getItem('favoriteCars') || '[]'),
+  favoriteCars: JSON.parse(localStorage.getItem("favoriteCars") || "[]"),
 };
 
 const favoritesSlice = createSlice({
-  name: 'favorites',
+  name: "favorites",
   initialState,
   reducers: {
     addFavoriteCar(state, action: PayloadAction<FavoriteCar>) {
       state.favoriteCars.push(action.payload);
-      localStorage.setItem('favoriteCars', JSON.stringify(state.favoriteCars));
+      localStorage.setItem("favoriteCars", JSON.stringify(state.favoriteCars));
     },
     removeFavoriteCar(state, action: PayloadAction<number>) {
-      state.favoriteCars = state.favoriteCars.filter((car) => car.id !== action.payload);
-      localStorage.setItem('favoriteCars', JSON.stringify(state.favoriteCars));
+      state.favoriteCars = state.favoriteCars.filter(
+        (car) => car.id !== action.payload
+      );
+      localStorage.setItem("favoriteCars", JSON.stringify(state.favoriteCars));
     },
   },
 });
 
 export const { addFavoriteCar, removeFavoriteCar } = favoritesSlice.actions;
 
-export const selectAllFavoriteCars = (state: RootState) => state.favorites.favoriteCars;
+export const selectAllFavoriteCars = (state: RootState) =>
+  state.favorites.favoriteCars;
 
 export default favoritesSlice.reducer;

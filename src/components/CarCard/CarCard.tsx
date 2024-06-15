@@ -49,20 +49,28 @@ const CarCard: React.FC<Props> = ({ advert }) => {
       />
       <div className={styles.details}>
         <div className={styles.titleCar}>
-          <h2 className={styles.titleCard}>{`${advert.make}, ${advert.year}`}</h2>
+          <h2
+            className={styles.titleCard}
+          >{`${advert.make}, ${advert.year}`}</h2>
           <p className={styles.titlePrice}>{`${advert.rentalPrice}$`}</p>
         </div>
         <p className={styles.descriptionCard}>
-          {advert.model} &#10072; {advert.type} &#10072; {advert.rentalCompany} &#10072;{" "}
-          {advert.fuelConsumption}
+          {advert.model} &#10072; {advert.type} &#10072; {advert.rentalCompany}{" "}
+          &#10072; {advert.fuelConsumption}
         </p>
         <button
           className={isFavorite ? styles.favorite : ""}
           onClick={handleFavoriteClick}
         >
-          {isFavorite ? <IoHeart /> : <IoMdHeartEmpty className={styles.notFavorite}/>}
+          {isFavorite ? (
+            <IoHeart />
+          ) : (
+            <IoMdHeartEmpty className={styles.notFavorite} />
+          )}
         </button>
-        <button className={styles.learnMore} onClick={handleOpenModal}>Learn more</button>
+        <button className={styles.learnMore} onClick={handleOpenModal}>
+          Learn more
+        </button>
       </div>
       {isModalOpen && (
         <CarDetailsModal

@@ -1,15 +1,16 @@
-
   <h1>Car Rental App</h1>
 
   <h2>Опис</h2>
   <p>Цей проект є веб-додатком для оренди автомобілів. Користувачі можуть переглядати та арендувати доступні автомобілі,  а також переглядати карту з розташуванням офісу.</p>
 
-
-  ## Функціонал
+## Функціонал
 
 - Перегляд доступних автомобілів
-- Фільтрація за виробником 
+- Фільтрація за виробником
 - Перегляд карти з розташуванням офісу
+
+<h2>Адаптивний дизайн</h2>
+Додаток розроблений з урахуванням адаптивного дизайну і добре адаптується до різних розмірів екрану.
 
   <h2>Вимоги</h2>
   <ul>
@@ -37,7 +38,6 @@
   <pre><code>npm start</code></pre>
   <p>або</p>
   <pre><code>yarn start</code></pre>
-
 
   <h2>Структура проекту</h2>
   <ul>
@@ -87,12 +87,14 @@
 <h2>Description</h2>
 <p>This project is a web application for car rental. Users can browse and rent available cars, as well as view a map with the location of the office.</p>
 
-
 ## Functionality
 
 - View available cars
 - Filtering by manufacturer
 - View map with office location
+
+<h2>Responsive Design</h2>
+The app is designed to be responsive and adapts well to different screen sizes.
 
 <h2>Requirements</h2>
 <ul>
@@ -120,7 +122,6 @@
 <pre><code>npm start</code></pre>
 or
 <pre><code>yarn start</code></pre>
-
 
 <h2>Project Structure</h2>
 <ul>

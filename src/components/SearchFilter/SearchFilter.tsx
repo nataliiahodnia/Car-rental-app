@@ -27,9 +27,10 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
   }, [value, allAdverts, onFilter]);
 
   const options = [
-    { value: "All Makes", label: "All Makes" },
+    { value: "", label: "Choose a car" },
     ...makes.map((make) => ({ value: make, label: make })),
   ];
+  
 
   return (
     <div className={styles.filters}>
@@ -37,7 +38,7 @@ const SearchFilter: React.FC<Props> = ({ onFilter }) => {
         <Select
           options={options}
           placeholder="Choose a car"
-          value={{ value: value, label: value }}
+          value={options.find((option) => option.value === value)}
           onChange={(selectedOption: any) =>
             setValue(selectedOption ? selectedOption.value : "")
           }

@@ -19,7 +19,9 @@ const PromotionsSection: React.FC = () => {
   }, []);
 
   const handleLearnMoreClick = (promotion: Promotion) => {
-    setSelectedPromotion(promotion);
+    if (!selectedPromotion) {
+      setSelectedPromotion(promotion);
+    }
   };
 
   const handleCloseModal = () => {

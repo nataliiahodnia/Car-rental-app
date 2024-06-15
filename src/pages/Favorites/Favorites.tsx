@@ -17,7 +17,7 @@ const FavoritesPage: React.FC = () => {
       <h1 className={styles.titleFavorite}>My Favorite Cars</h1>
       {favoriteCars.length === 0 ? (
         <div className={styles.noFavorites}>
-          <FaRegFaceSadTear  className={styles.noFavoritesIcon} />
+          <FaRegFaceSadTear className={styles.noFavoritesIcon} />
           <p className={styles.noFavoritesMessage}>
             You don't have any favorite cars yet. Add some cars to your
             favorites!

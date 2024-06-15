@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   background-color: var(--white);
   outline: none;
-  min-height: 752px;
+  min-height: 320px;
   border-radius: 24px;
 
   overflow-y: auto;
@@ -50,14 +50,14 @@
 }
 
 .modalContentItem {
-  padding: 40px;
+  padding: 20px;
 }
 
 .closeButton {
   position: absolute;
   right: 10px;
   padding: 8px;
-  font-size: 34px;
+  font-size: 14px;
   background: none;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -68,14 +68,15 @@
 }
 
 .carImg {
-  width: 461px;
-  height: 248px;
+  width: 260px;
+  height: 148px;
   border-radius: 14px;
   object-fit: cover;
 }
 
+
 .details {
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .detailsTitle {
@@ -92,19 +93,19 @@
 
 .descriptionCard {
   margin-top: 8px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 14px;
   text-align: left;
   color: rgba(18, 20, 23, 0.5);
-  max-width: 277px;
+  max-width: 467px;
 }
 
 .description {
-  margin-top: 24px;
-  font-size: 14px;
+  margin-top: 12px;
+  font-size: 10px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 12px;
   text-align: left;
   max-width: 461px;
 }
@@ -112,17 +113,16 @@
 .descriptionItem {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap; 
-  margin-bottom: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
   margin-top: 8px;
   max-width: 461px;
 }
 
 .oval {
-  padding: 10px 15px;
+  padding: 4px 10px;
   border-radius: 25px;
-  background-color: #f9f9f9; 
-  white-space: nowrap; 
+  background-color: #f9f9f9;
 }
 
 .mileage {
@@ -151,3 +151,50 @@
 .rentalLink:hover {
   background-color: var(--blue-btn-hover);
 }
+
+@media screen and (min-width: 768px) {
+
+  .modal {
+    min-height: 752px;
+  }
+
+  .carImg {
+    width: 467px;
+    height: 248px;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  .modalContentItem {
+    padding: 40px;
+  }
+
+  .description {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .details {
+    margin-top: 20px;
+  }
+
+  .closeButton {
+    font-size: 34px;
+  }
+
+  .descriptionItem {
+    margin-bottom: 24px;
+  }
+
+  .oval {
+    padding: 10px 15px;
+  }
+
+  .descriptionCard {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+

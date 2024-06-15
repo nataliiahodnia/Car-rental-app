@@ -11,7 +11,8 @@ import Loader from "../../components/Loader/Loader";
 import styles from "./Catalog.module.css";
 
 const CatalogPage: React.FC = () => {
-  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
+  const dispatch =
+    useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
   const [filteredAdverts, setFilteredAdverts] = useState<Advert[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 

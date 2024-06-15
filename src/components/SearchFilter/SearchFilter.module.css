@@ -1,5 +1,17 @@
 .filters {
-width: 50%;
-margin: 0 auto;
-padding-top: 32px;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .filters {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .filters {
+    width: 20%;
+  }
 }

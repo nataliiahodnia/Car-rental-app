@@ -724,89 +724,33 @@
     "id": 9685
   },
   {
-    "year": 2020,
-    "make": "Chrysler",
-    "model": "Voyager",
-    "type": "Van/Minivan",
-    "photoLink": "https://ftp.goit.study/img/cars-test-task/chrysler_voyager.jpg",
-    "description": "The Chrysler Voyager is a practical and versatile van/minivan that provides comfortable seating, ample cargo space, and a range of convenient features for family-oriented transportation.",
-    "fuelConsumption": "8.2",
-    "engineSize": "3.6L V6",
-    "accessories": [
-      "Stow 'n Go seating",
-      "Uconnect infotainment system",
-      "Blind Spot Monitoring"
-    ],
-    "functionalities": [
-      "Front-Wheel Drive",
-      "Electronic Stability Control",
-      "Power sliding side doors"
-    ],
-    "rentalPrice": "100",
-    "rentalCompany": "Family Car Rentals",
-    "address": "789 Example Boulevard, Odesa, Ukraine",
-    "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
-    "mileage": 5807,
-    "id": 9660
-  },
-  {
-    "year": 2020,
-    "make": "Kia",
-    "model": "Rio",
-    "type": "Hatchback",
-    "photoLink": "https://ftp.goit.study/img/cars-test-task/kia_rio_hatchback.jpeg",
-    "description": "The Kia Rio is a compact and fuel-efficient hatchback that offers a blend of affordability, reliability, and practicality, making it an excellent choice for urban commuting and everyday driving.",
-    "fuelConsumption": "6.2",
-    "engineSize": "1.6L 4-cylinder",
-    "accessories": [
-      "Apple CarPlay and Android Auto integration",
-      "Smart Key with Push Button Start",
-      "Automatic climate control"
-    ],
-    "functionalities": [
-      "Front-Wheel Drive",
-      "Electronic Stability Control",
-      "Rearview camera"
-    ],
-    "rentalPrice": "50",
-    "rentalCompany": "Economy Car Rentals",
-    "address": "321 Example Lane, Kharkiv, Ukraine",
-    "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
-    "mileage": 4618,
-    "id": 9630
-  },
-  {
-    "year": 2020,
+    "year": 2019,
     "make": "Volvo",
     "model": "XC60",
     "type": "SUV",
-    "photoLink": "https://ftp.goit.study/img/cars-test-task/volvo_xc60_2.jpeg",
-    "description": "The Volvo XC60 is a luxurious and versatile SUV that combines Scandinavian design, advanced safety features, and a comfortable driving experience, making it an ideal choice for families and adventure enthusiasts.",
-    "fuelConsumption": "8.5",
-    "engineSize": "2.0L 4-cylinder",
-    "accessories": [
-      "Leather upholstery",
-      "Panoramic sunroof",
-      "Harman Kardon premium sound system"
-    ],
+    "img": "https://bi.im-g.pl/im/c2/aa/14/z21668034AMP,Nowe-Volvo--XC60.jpg",
+    "description": "The Volvo XC60 is a representative of the compact premium crossover segment from the Swedish manufacturer Volvo.",
+    "fuelConsumption": "10.8",
+    "engineSize": "2.5L V6",
+    "accessories": ["Floor Mats", "Roof Box", "Ski/Snowboard Rack"],
     "functionalities": [
-      "All-Wheel Drive",
-      "City Safety collision avoidance technology",
-      "Power tailgate"
+      "Lane Keeping Aid",
+      "Road Sign Information",
+      "Driver Alert Control"
     ],
-    "rentalPrice": "150",
-    "rentalCompany": "Premium Car Rentals",
-    "address": "987 Example Road, Dnipro, Ukraine",
-    "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
-    "mileage": 6618,
-    "id": 9586
+    "rentalPrice": "90",
+    "rentalCompany": "Adventure Witch",
+    "address": "123 Adventure Lane, Poltava, Ukraine",
+    "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit required",
+    "mileage": 78000,
+    "id": 9999
   },
   {
-     "year": 2017,
+     "year": 2019,
      "make": "Toyota",
      "model": "Tacoma",
      "type": "Pickup",
-     "img": "https://images.unsplash.com/photo-1632107516728-e7b496805e8d?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+     "img": "https://cdn.motor1.com/images/mgl/L37MOG/s1/2024-toyota-tacoma-trd-pro.jpg",
      "description": "The Toyota Tacoma is a reliable and durable pickup truck known for its off-road prowess, strong towing capacity, and comfortable cabin.",
      "fuelConsumption": "11.8",
      "engineSize": "3.5L V6",
@@ -821,6 +765,60 @@
      "address": "123 Adventure Lane, Poltava, Ukraine",
      "rentalConditions": "Minimum age: 21\nValid driver's license\nSecurity deposit required",
      "mileage": 78000,
-     "id": 9970
-   }
+     "id": 9993
+   },
+   {
+    "year": 2020,
+    "make": "BMW",
+    "model": "3 Series",
+    "type": "Sedan",
+    "img": "https://hips.hearstapps.com/hmg-prod/images/2020-bmw-m340i-v-2020-genesis-g70-3p3t-1016-hdr-1571838328.jpg?crop=0.673xw:0.824xh;0.0717xw,0.176xh&resize=768:*",
+    "description": "The BMW 3 Series is a compact executive car manufactured by the German automaker BMW. Known for its sporty performance and luxurious design, the 3 Series offers a perfect blend of style, comfort, and driving dynamics.",
+    "fuelConsumption": "8.5",
+    "engineSize": "2.0L Inline-4",
+    "accessories": [
+      "Wireless Charging Pad",
+      "Heads-Up Display",
+      "Parking Assistance System"
+    ],
+    "functionalities": [
+      "Adaptive Cruise Control",
+      "Blind Spot Monitoring",
+      "Automatic Emergency Braking"
+    ],
+    "rentalPrice": "70",
+    "rentalCompany": "Luxury Car Rentals",
+    "address": "456 Luxury Street, Kiev, Ukraine",
+    "rentalConditions": "Minimum age: 25\nValid driver's license required\nSecurity deposit and insurance required",
+    "mileage": 25000,
+    "id": 8888
+  },
+  {
+    "year": 2021,
+    "make": "BMW",
+    "model": "X5",
+    "type": "SUV",
+    "img": "https://www.digitaltrends.com/wp-content/uploads/2022/01/2021-bmw-x5-phev-2.jpg?p=1",
+    "description": "The BMW X5 is a luxury mid-size SUV that combines the versatility of an SUV with the driving dynamics and luxury features typical of BMW vehicles.",
+    "fuelConsumption": "11.5",
+    "engineSize": "3.0L Inline-6",
+    "accessories": [
+      "Panoramic Sunroof",
+      "Leather Interior",
+      "Surround View Camera System"
+    ],
+    "functionalities": [
+      "Adaptive Suspension",
+      "Gesture Control",
+      "Parking Assistant Plus"
+    ],
+    "rentalPrice": "150",
+    "rentalCompany": "Prestige Car Rentals",
+    "address": "789 Prestige Avenue, Lviv, Ukraine",
+    "rentalConditions": "Minimum age: 25\nValid driver's license required\nSecurity deposit and insurance required",
+    "mileage": 15000,
+    "id": 7777
+  }
+  
+  
 ]

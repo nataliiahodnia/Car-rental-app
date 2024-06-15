@@ -12,8 +12,12 @@ interface Props {
 const CarDetailsModal: React.FC<Props> = ({ isOpen, onClose, car }) => {
   Modal.setAppElement("#root");
 
-  const accessories = Array.isArray(car.accessories) ? car.accessories.join(", ") : "";
-  const functionalities = Array.isArray(car.functionalities) ? car.functionalities.join(", ") : "";
+  const accessories = Array.isArray(car.accessories)
+    ? car.accessories.join(", ")
+    : "";
+  const functionalities = Array.isArray(car.functionalities)
+    ? car.functionalities.join(", ")
+    : "";
 
   return (
     <Modal
@@ -59,7 +63,7 @@ const CarDetailsModal: React.FC<Props> = ({ isOpen, onClose, car }) => {
             <p className={styles.descriptionItem}>
               <span className={styles.oval}>{car.rentalConditions}</span>
               <span className={styles.oval}>
-                Mileage:{' '}
+                Mileage:{" "}
                 <span className={styles.mileage}>
                   {parseInt(car.mileage, 10).toLocaleString()}
                 </span>

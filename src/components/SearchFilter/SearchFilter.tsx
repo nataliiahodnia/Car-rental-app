@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
-import { useDispatch, useSelector } from 'react-redux';
-import { Advert, fetchAdverts, selectAllAdverts } from '../../redux/slices/advertsSlice';
+import { useSelector } from 'react-redux';
+import { Advert, selectAllAdverts } from '../../redux/slices/advertsSlice';
 import { RootState } from '../../redux/store';
-import { ThunkDispatch } from '@reduxjs/toolkit';
-import { Action } from '@reduxjs/toolkit';
+// import { ThunkDispatch } from '@reduxjs/toolkit';
+// import { Action } from '@reduxjs/toolkit';
 import styles from './SearchFilter.module.css';
 import makes from '../../data/makes.json';
 
@@ -13,13 +13,9 @@ interface Props {
 }
 
 const SearchFilter: React.FC<Props> = ({ onFilter }) => {
-    const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
+    // const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
     const [value, setValue] = useState<string>('');
     const allAdverts = useSelector((state: RootState) => selectAllAdverts(state));
-
-    useEffect(() => {
-        dispatch(fetchAdverts());
-    }, [dispatch]);
 
     useEffect(() => {
         let filteredAdverts = allAdverts;

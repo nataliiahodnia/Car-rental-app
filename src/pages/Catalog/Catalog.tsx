@@ -11,25 +11,15 @@ import Loader from "../../components/Loader/Loader";
 import styles from "./Catalog.module.css";
 
 const CatalogPage: React.FC = () => {
-  const dispatch =
-    useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
+  const dispatch = useDispatch<ThunkDispatch<RootState, null, Action<string>>>();
   const [filteredAdverts, setFilteredAdverts] = useState<Advert[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [, setShowLoadMore] = useState<boolean>(false);
 
   useEffect(() => {
     dispatch(fetchAdverts())
       .then(() => setLoading(false))
       .catch(() => setLoading(false));
   }, [dispatch]);
-
-  useEffect(() => {
-    if (filteredAdverts.length > 0) {
-      setShowLoadMore(true);
-    } else {
-      setShowLoadMore(false);
-    }
-  }, [filteredAdverts]);
 
   return (
     <div>
